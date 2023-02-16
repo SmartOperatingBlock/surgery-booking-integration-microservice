@@ -24,6 +24,10 @@ dependencies {
     testImplementation(libs.bundles.kotlin.testing)
 }
 
+application {
+    mainClass.set("AppKt")
+}
+
 kotlin {
     target {
         compilations.all {

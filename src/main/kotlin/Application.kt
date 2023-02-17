@@ -1,7 +1,3 @@
-import application.SurgeryBookingController
-import infrastructure.DigitalTwinSurgeryBookingManager
-import infrastructure.SurgicalBookingDataReceiver
-
 /*
  * Copyright (c) 2023. Smart Operating Block
  *
@@ -10,21 +6,33 @@ import infrastructure.SurgicalBookingDataReceiver
  * https://opensource.org/licenses/MIT.
  */
 
+import application.SurgeryBookingController
+import infrastructure.DigitalTwinSurgeryBookingManager
+import infrastructure.SurgicalBookingDataReceiver
+import io.ktor.server.application.Application
+import io.ktor.server.application.call
+import io.ktor.server.request.receiveText
+import io.ktor.server.routing.post
+import io.ktor.server.routing.routing
+
 /**
- * Template for kotlin projects.
+ * Main function.
  */
-fun main() {
+fun main(args: Array<String>) {
+    io.ktor.server.netty.EngineMain.main(args)
+}
+
+/**
+ * Manages http requests to get surgery booking information.
+ */
+fun Application.module() {
     val surgeryBookingManager = DigitalTwinSurgeryBookingManager()
     val surgeryBookingController = SurgeryBookingController(surgeryBookingManager)
     val surgeryBookingDataReceiver = SurgicalBookingDataReceiver(surgeryBookingController)
-    val dataSimulation = """
-        {
-        	"surgeryID" : "surgery1", 
-        	"surgeryType" : "aneurysmClipping", 
-        	"healthcareUserID" : "hu1",
-        	"healthProfessionalID" : "hp1",
-        	"surgeryDateTime" : "2023-02-17T09:18:33" 
+
+    routing {
+        post("/") {
+            surgeryBookingDataReceiver.receiveSurgeryBookingInformation(call.receiveText())
         }
-    """.trimIndent()
-    surgeryBookingDataReceiver.receiveSurgeryBookingInformation(dataSimulation)
+    }
 }

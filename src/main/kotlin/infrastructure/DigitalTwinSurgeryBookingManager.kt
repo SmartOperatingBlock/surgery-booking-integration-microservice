@@ -102,9 +102,7 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
      * Check if the digital twin exists.
      */
     private fun checkIfDigitalTwinExists(digitalTwinId: String) =
-        client.query("SELECT * FROM digitaltwins WHERE \$dtId = '$digitalTwinId'", String::class.java)
-            .toList()
-            .isEmpty()
+        client.query("SELECT * FROM digitaltwins WHERE \$dtId = '$digitalTwinId'", String::class.java).count() > 0
 
     /**
      * Get information about the health care user.

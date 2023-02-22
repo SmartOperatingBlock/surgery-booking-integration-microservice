@@ -6,9 +6,10 @@
  * https://opensource.org/licenses/MIT.
  */
 
-package infrastructure
+package infrastructure.api
 
 import application.SurgeryBookingController
+import infrastructure.Provider
 import io.ktor.http.HttpStatusCode
 import io.ktor.server.application.Application
 import io.ktor.server.application.call

@@ -6,7 +6,7 @@
  * https://opensource.org/licenses/MIT.
  */
 
-import infrastructure.SurgicalBookingDataReceiver
+import infrastructure.api.SurgicalBookingDataReceiver
 
 /**
  * Main function.

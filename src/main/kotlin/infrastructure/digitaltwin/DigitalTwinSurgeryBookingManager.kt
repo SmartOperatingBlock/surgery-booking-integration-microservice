@@ -6,7 +6,7 @@
  * https://opensource.org/licenses/MIT.
  */
 
-package infrastructure
+package infrastructure.digitaltwin
 
 import application.SurgeryBookingManager
 import com.azure.digitaltwins.core.BasicDigitalTwin

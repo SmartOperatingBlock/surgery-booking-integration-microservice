@@ -8,6 +8,8 @@
 
 package infrastructure
 
+import infrastructure.digitaltwin.DigitalTwinSurgeryBookingManager
+
 /**
  * A provider for [DigitalTwinSurgeryBookingManager].
  */

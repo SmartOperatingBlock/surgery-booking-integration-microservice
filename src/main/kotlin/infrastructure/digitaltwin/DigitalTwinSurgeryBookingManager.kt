@@ -57,19 +57,13 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
      * Updates the azure digital twin platform with the surgery booking information.
      */
     override fun manage(surgeryBooking: SurgeryBooking) {
-        val digitalTwin = BasicDigitalTwin(surgeryBooking.surgeryID.id)
-        digitalTwin.metadata = BasicDigitalTwinMetadata()
-            .setModelId("dtmi:io:github:smartoperatingblock:SurgeryBooking;1")
-        digitalTwin.contents["surgery_type"] = surgeryBooking.surgeryType.type
-        digitalTwin.contents["booking_date_time"] = surgeryBooking.surgeryDateTime.date.toString()
-        client.createOrReplaceDigitalTwin(surgeryBooking.surgeryID.id, digitalTwin, BasicDigitalTwin::class.java)
-
-        val surgeryHealthProfessionalRelationShip = createRelationship(
+        client.createOrReplaceDigitalTwin(
             surgeryBooking.surgeryID.id,
-            surgeryBooking.healthProfessionalID.id,
-            "rel_responsible_health_professional"
+            this.createSurgeryBookingDigitalTwin(surgeryBooking),
+            BasicDigitalTwin::class.java
         )
 
+        val surgeryHealthProfessionalRelationShip = this.createSurgeryHealthProfessionalRelationship(surgeryBooking)
         client.createOrReplaceRelationship(
             surgeryHealthProfessionalRelationShip.sourceId,
             surgeryHealthProfessionalRelationShip.id,
@@ -78,12 +72,8 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
         )
 
         if (!checkIfDigitalTwinExists(surgeryBooking.healthcareUserID.id)) requestHealthCareUserInformation()
-        val surgeryHealthcareUserRelationship = createRelationship(
-            surgeryBooking.surgeryID.id,
-            surgeryBooking.healthcareUserID.id,
-            "rel_healthcare_user"
-        )
 
+        val surgeryHealthcareUserRelationship = this.createSurgeryHealthCareUserRelationship(surgeryBooking)
         client.createOrReplaceRelationship(
             surgeryHealthcareUserRelationship.sourceId,
             surgeryHealthcareUserRelationship.id,
@@ -93,16 +83,42 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
     }
 
     /**
-     * Create a relationship between two digital twins.
+     * Create a relationship between surgery booking dt and health professional dt.
      */
-    private fun createRelationship(sourceID: String, targetID: String, relationshipName: String) =
-        BasicRelationship("$sourceID-$targetID", sourceID, targetID, relationshipName)
+    private fun createSurgeryHealthProfessionalRelationship(surgeryBooking: SurgeryBooking) =
+        BasicRelationship(
+            "${surgeryBooking.surgeryID.id}-${surgeryBooking.healthProfessionalID.id}",
+            surgeryBooking.surgeryID.id, surgeryBooking.healthProfessionalID.id,
+            "rel_responsible_health_professional"
+        )
+
+    /**
+     * Create a relationship between surgery booking dt and healthcare user dt.
+     */
+    private fun createSurgeryHealthCareUserRelationship(surgeryBooking: SurgeryBooking) =
+        BasicRelationship(
+            "${surgeryBooking.surgeryID.id}-${surgeryBooking.healthcareUserID.id}",
+            surgeryBooking.surgeryID.id, surgeryBooking.healthcareUserID.id,
+            "rel_healthcare_user"
+        )
 
     /**
      * Check if the digital twin exists.
      */
     private fun checkIfDigitalTwinExists(digitalTwinId: String) =
         client.query("SELECT * FROM digitaltwins WHERE \$dtId = '$digitalTwinId'", String::class.java).count() > 0
+
+    /**
+     * Create a [BasicDigitalTwin] of a surgery booking.
+     */
+    private fun createSurgeryBookingDigitalTwin(surgeryBooking: SurgeryBooking): BasicDigitalTwin {
+        val digitalTwin = BasicDigitalTwin(surgeryBooking.surgeryID.id)
+        digitalTwin.metadata = BasicDigitalTwinMetadata()
+            .setModelId("dtmi:io:github:smartoperatingblock:SurgeryBooking;1")
+        digitalTwin.contents["surgery_type"] = surgeryBooking.surgeryType.type
+        digitalTwin.contents["booking_date_time"] = surgeryBooking.surgeryDateTime.date.toString()
+        return digitalTwin
+    }
 
     /**
      * Get information about the health care user.

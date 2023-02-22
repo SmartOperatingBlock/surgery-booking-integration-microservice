@@ -9,16 +9,49 @@
 package infrastructure
 
 import application.SurgeryBookingController
+import io.ktor.http.HttpStatusCode
+import io.ktor.server.application.Application
+import io.ktor.server.application.call
+import io.ktor.server.engine.embeddedServer
+import io.ktor.server.netty.Netty
+import io.ktor.server.request.receiveText
+import io.ktor.server.response.respond
+import io.ktor.server.routing.post
+import io.ktor.server.routing.routing
 
 /**
  * This class is used for receiving data about surgery booking from third party system.
  */
-class SurgicalBookingDataReceiver(private val controller: SurgeryBookingController) {
+class SurgicalBookingDataReceiver {
 
     /**
-     * Receives data about surgery booking.
+     * Starts ktor embedded server.
      */
-    fun receiveSurgeryBookingInformation(data: String) {
-        controller.surgeryBookingInformationReceived(data)
+    fun start() {
+        embeddedServer(Netty, port = 3000, module = this::dispatcher).start(true)
+    }
+
+    /**
+     * Dispatcher for http requests.
+     */
+    fun dispatcher(app: Application) {
+        with(app) {
+            receiveSurgeryBooking(this)
+        }
+    }
+
+    /**
+     * Receive data about telemetry system.
+     */
+    private fun receiveSurgeryBooking(app: Application) {
+        with(app) {
+            routing {
+                post("/telemetrySystem") {
+                    SurgeryBookingController(Provider.digitalTwinSurgeryBookingManager)
+                        .surgeryBookingInformationReceived(call.receiveText())
+                    call.respond(HttpStatusCode.OK)
+                }
+            }
+        }
     }
 }

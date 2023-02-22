@@ -41,7 +41,7 @@ class SurgicalBookingDataReceiver {
     }
 
     /**
-     * Receive data about telemetry system.
+     * Receive data about surgery booking.
      */
     private fun receiveSurgeryBooking(app: Application) {
         with(app) {

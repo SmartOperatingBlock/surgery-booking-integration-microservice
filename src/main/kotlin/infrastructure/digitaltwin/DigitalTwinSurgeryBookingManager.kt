@@ -14,6 +14,7 @@ import com.azure.digitaltwins.core.BasicDigitalTwinMetadata
 import com.azure.digitaltwins.core.BasicRelationship
 import com.azure.digitaltwins.core.DigitalTwinsClient
 import com.azure.digitaltwins.core.DigitalTwinsClientBuilder
+import com.azure.digitaltwins.core.implementation.models.ErrorResponseException
 import com.azure.identity.ClientSecretCredentialBuilder
 import entities.SurgeryBooking
 
@@ -56,30 +57,36 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
     /**
      * Updates the azure digital twin platform with the surgery booking information.
      */
-    override fun manage(surgeryBooking: SurgeryBooking) {
-        client.createOrReplaceDigitalTwin(
-            surgeryBooking.surgeryID.id,
-            this.createSurgeryBookingDigitalTwin(surgeryBooking),
-            BasicDigitalTwin::class.java
-        )
+    override fun createSurgeryBookingDigitalTwin(surgeryBooking: SurgeryBooking): Boolean {
+        try {
+            client.createOrReplaceDigitalTwin(
+                surgeryBooking.surgeryID.id,
+                this.createDigitalTwin(surgeryBooking),
+                BasicDigitalTwin::class.java
+            )
 
-        val surgeryHealthProfessionalRelationShip = this.createSurgeryHealthProfessionalRelationship(surgeryBooking)
-        client.createOrReplaceRelationship(
-            surgeryHealthProfessionalRelationShip.sourceId,
-            surgeryHealthProfessionalRelationShip.id,
-            surgeryHealthProfessionalRelationShip,
-            BasicRelationship::class.java
-        )
+            val surgeryHealthProfessionalRelationShip = this.createSurgeryHealthProfessionalRelationship(surgeryBooking)
+            client.createOrReplaceRelationship(
+                surgeryHealthProfessionalRelationShip.sourceId,
+                surgeryHealthProfessionalRelationShip.id,
+                surgeryHealthProfessionalRelationShip,
+                BasicRelationship::class.java
+            )
 
-        if (!checkIfDigitalTwinExists(surgeryBooking.healthcareUserID.id)) requestHealthCareUserInformation()
+            if (!checkIfDigitalTwinExists(surgeryBooking.healthcareUserID.id)) requestHealthCareUserInformation()
 
-        val surgeryHealthcareUserRelationship = this.createSurgeryHealthCareUserRelationship(surgeryBooking)
-        client.createOrReplaceRelationship(
-            surgeryHealthcareUserRelationship.sourceId,
-            surgeryHealthcareUserRelationship.id,
-            surgeryHealthcareUserRelationship,
-            BasicRelationship::class.java
-        )
+            val surgeryHealthcareUserRelationship = this.createSurgeryHealthCareUserRelationship(surgeryBooking)
+            client.createOrReplaceRelationship(
+                surgeryHealthcareUserRelationship.sourceId,
+                surgeryHealthcareUserRelationship.id,
+                surgeryHealthcareUserRelationship,
+                BasicRelationship::class.java
+            )
+            return true
+        } catch (e: ErrorResponseException) {
+            println(e)
+            return false
+        }
     }
 
     /**
@@ -111,7 +118,7 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
     /**
      * Create a [BasicDigitalTwin] of a surgery booking.
      */
-    private fun createSurgeryBookingDigitalTwin(surgeryBooking: SurgeryBooking): BasicDigitalTwin {
+    private fun createDigitalTwin(surgeryBooking: SurgeryBooking): BasicDigitalTwin {
         val digitalTwin = BasicDigitalTwin(surgeryBooking.surgeryID.id)
         digitalTwin.metadata = BasicDigitalTwinMetadata()
             .setModelId("dtmi:io:github:smartoperatingblock:SurgeryBooking;1")

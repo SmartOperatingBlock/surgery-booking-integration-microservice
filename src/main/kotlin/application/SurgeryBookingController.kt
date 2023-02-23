@@ -8,19 +8,16 @@
 
 package application
 
-import application.presenters.deserializer.SurgeryBookingJsonDeserializer
-
+import entities.SurgeryBooking
+import usecase.repository.SurgeryBookingRepository
 /**
  * A controller for surgery booking.
  */
-class SurgeryBookingController(private val manager: SurgeryBookingManager) {
+class SurgeryBookingController(private val manager: SurgeryBookingManager) : SurgeryBookingRepository {
 
-    /**
-     * Received data about surgery booking.
-     */
-    fun surgeryBookingInformationReceived(data: String) {
-        val deserializer = SurgeryBookingJsonDeserializer()
-        val surgeryBooking = deserializer.deserialize(data)
-        manager.manage(surgeryBooking)
+    override fun createSurgeryBooking(surgeryBooking: SurgeryBooking): Boolean {
+        val bool = manager.createSurgeryBookingDigitalTwin(surgeryBooking)
+        println(bool)
+        return bool
     }
 }

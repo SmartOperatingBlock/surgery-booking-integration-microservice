@@ -9,6 +9,7 @@
 package infrastructure.api
 
 import application.SurgeryBookingController
+import application.presenters.deserializer.SurgeryBookingJsonDeserializer
 import infrastructure.Provider
 import io.ktor.http.HttpStatusCode
 import io.ktor.server.application.Application
@@ -47,10 +48,14 @@ class SurgicalBookingDataReceiver {
     private fun receiveSurgeryBooking(app: Application) {
         with(app) {
             routing {
-                post("/telemetrySystem") {
-                    SurgeryBookingController(Provider.digitalTwinSurgeryBookingManager)
-                        .surgeryBookingInformationReceived(call.receiveText())
-                    call.respond(HttpStatusCode.OK)
+                post("/surgeryBooking") {
+                    if (SurgeryBookingController(Provider.digitalTwinSurgeryBookingManager)
+                        .createSurgeryBooking(SurgeryBookingJsonDeserializer().deserialize(call.receiveText()))
+                    ) {
+                        call.respond(HttpStatusCode.OK)
+                    } else {
+                        call.respond(HttpStatusCode.Conflict)
+                    }
                 }
             }
         }

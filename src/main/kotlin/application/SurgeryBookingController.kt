@@ -15,9 +15,6 @@ import usecase.repository.SurgeryBookingRepository
  */
 class SurgeryBookingController(private val manager: SurgeryBookingManager) : SurgeryBookingRepository {
 
-    override fun createSurgeryBooking(surgeryBooking: SurgeryBooking): Boolean {
-        val bool = manager.createSurgeryBookingDigitalTwin(surgeryBooking)
-        println(bool)
-        return bool
-    }
+    override fun createSurgeryBooking(surgeryBooking: SurgeryBooking): Boolean =
+        manager.createSurgeryBookingDigitalTwin(surgeryBooking)
 }

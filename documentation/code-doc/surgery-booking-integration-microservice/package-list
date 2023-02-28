@@ -1,0 +1,72 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:////PointingToDeclaration/surgery-booking-integration-microservice/[root]/index.html
+$dokka.location://main/#/PointingToDeclaration/surgery-booking-integration-microservice/[root]/main.html
+$dokka.location:application.presenters.deserializer////PointingToDeclaration/surgery-booking-integration-microservice/application.presenters.deserializer/index.html
+$dokka.location:application.presenters.deserializer/SurgeryBookingDeserializer///PointingToDeclaration/surgery-booking-integration-microservice/application.presenters.deserializer/-surgery-booking-deserializer/index.html
+$dokka.location:application.presenters.deserializer/SurgeryBookingDeserializer/deserialize/#TypeParam(bounds=[kotlin.Any?])/PointingToDeclaration/surgery-booking-integration-microservice/application.presenters.deserializer/-surgery-booking-deserializer/deserialize.html
+$dokka.location:application.presenters.deserializer/SurgeryBookingJsonDeserializer///PointingToDeclaration/surgery-booking-integration-microservice/application.presenters.deserializer/-surgery-booking-json-deserializer/index.html
+$dokka.location:application.presenters.deserializer/SurgeryBookingJsonDeserializer/SurgeryBookingJsonDeserializer/#/PointingToDeclaration/surgery-booking-integration-microservice/application.presenters.deserializer/-surgery-booking-json-deserializer/-surgery-booking-json-deserializer.html
+$dokka.location:application.presenters.deserializer/SurgeryBookingJsonDeserializer/deserialize/#kotlin.String/PointingToDeclaration/surgery-booking-integration-microservice/application.presenters.deserializer/-surgery-booking-json-deserializer/deserialize.html
+$dokka.location:application.presenters.deserializer/SurgeryBookingJsonKeys///PointingToDeclaration/surgery-booking-integration-microservice/application.presenters.deserializer/-surgery-booking-json-keys/index.html
+$dokka.location:application.presenters.deserializer/SurgeryBookingJsonKeys/HEALTH_CARE_USER_ID/#/PointingToDeclaration/surgery-booking-integration-microservice/application.presenters.deserializer/-surgery-booking-json-keys/-h-e-a-l-t-h_-c-a-r-e_-u-s-e-r_-i-d.html
+$dokka.location:application.presenters.deserializer/SurgeryBookingJsonKeys/HEALTH_PROFESSIONAL_ID/#/PointingToDeclaration/surgery-booking-integration-microservice/application.presenters.deserializer/-surgery-booking-json-keys/-h-e-a-l-t-h_-p-r-o-f-e-s-s-i-o-n-a-l_-i-d.html
+$dokka.location:application.presenters.deserializer/SurgeryBookingJsonKeys/SURGERY_DATE_TIME/#/PointingToDeclaration/surgery-booking-integration-microservice/application.presenters.deserializer/-surgery-booking-json-keys/-s-u-r-g-e-r-y_-d-a-t-e_-t-i-m-e.html
+$dokka.location:application.presenters.deserializer/SurgeryBookingJsonKeys/SURGERY_ID/#/PointingToDeclaration/surgery-booking-integration-microservice/application.presenters.deserializer/-surgery-booking-json-keys/-s-u-r-g-e-r-y_-i-d.html
+$dokka.location:application.presenters.deserializer/SurgeryBookingJsonKeys/SURGERY_TYPE/#/PointingToDeclaration/surgery-booking-integration-microservice/application.presenters.deserializer/-surgery-booking-json-keys/-s-u-r-g-e-r-y_-t-y-p-e.html
+$dokka.location:application////PointingToDeclaration/surgery-booking-integration-microservice/application/index.html
+$dokka.location:application/SurgeryBookingController///PointingToDeclaration/surgery-booking-integration-microservice/application/-surgery-booking-controller/index.html
+$dokka.location:application/SurgeryBookingController/SurgeryBookingController/#application.SurgeryBookingManager/PointingToDeclaration/surgery-booking-integration-microservice/application/-surgery-booking-controller/-surgery-booking-controller.html
+$dokka.location:application/SurgeryBookingController/createSurgeryBooking/#entity.SurgeryBooking/PointingToDeclaration/surgery-booking-integration-microservice/application/-surgery-booking-controller/create-surgery-booking.html
+$dokka.location:application/SurgeryBookingManager///PointingToDeclaration/surgery-booking-integration-microservice/application/-surgery-booking-manager/index.html
+$dokka.location:application/SurgeryBookingManager/createSurgeryBookingDigitalTwin/#entity.SurgeryBooking/PointingToDeclaration/surgery-booking-integration-microservice/application/-surgery-booking-manager/create-surgery-booking-digital-twin.html
+$dokka.location:entity////PointingToDeclaration/surgery-booking-integration-microservice/entity/index.html
+$dokka.location:entity/HealthProfessionalID///PointingToDeclaration/surgery-booking-integration-microservice/entity/-health-professional-i-d/index.html
+$dokka.location:entity/HealthProfessionalID/HealthProfessionalID/#kotlin.String/PointingToDeclaration/surgery-booking-integration-microservice/entity/-health-professional-i-d/-health-professional-i-d.html
+$dokka.location:entity/HealthProfessionalID/id/#/PointingToDeclaration/surgery-booking-integration-microservice/entity/-health-professional-i-d/id.html
+$dokka.location:entity/HealthcareUserID///PointingToDeclaration/surgery-booking-integration-microservice/entity/-healthcare-user-i-d/index.html
+$dokka.location:entity/HealthcareUserID/HealthcareUserID/#kotlin.String/PointingToDeclaration/surgery-booking-integration-microservice/entity/-healthcare-user-i-d/-healthcare-user-i-d.html
+$dokka.location:entity/HealthcareUserID/id/#/PointingToDeclaration/surgery-booking-integration-microservice/entity/-healthcare-user-i-d/id.html
+$dokka.location:entity/SurgeryBooking///PointingToDeclaration/surgery-booking-integration-microservice/entity/-surgery-booking/index.html
+$dokka.location:entity/SurgeryBooking/SurgeryBooking/#entity.SurgeryID#entity.SurgeryType#entity.HealthcareUserID#entity.HealthProfessionalID#entity.SurgeryDateTime/PointingToDeclaration/surgery-booking-integration-microservice/entity/-surgery-booking/-surgery-booking.html
+$dokka.location:entity/SurgeryBooking/healthProfessionalID/#/PointingToDeclaration/surgery-booking-integration-microservice/entity/-surgery-booking/health-professional-i-d.html
+$dokka.location:entity/SurgeryBooking/healthcareUserID/#/PointingToDeclaration/surgery-booking-integration-microservice/entity/-surgery-booking/healthcare-user-i-d.html
+$dokka.location:entity/SurgeryBooking/surgeryDateTime/#/PointingToDeclaration/surgery-booking-integration-microservice/entity/-surgery-booking/surgery-date-time.html
+$dokka.location:entity/SurgeryBooking/surgeryID/#/PointingToDeclaration/surgery-booking-integration-microservice/entity/-surgery-booking/surgery-i-d.html
+$dokka.location:entity/SurgeryBooking/surgeryType/#/PointingToDeclaration/surgery-booking-integration-microservice/entity/-surgery-booking/surgery-type.html
+$dokka.location:entity/SurgeryDateTime///PointingToDeclaration/surgery-booking-integration-microservice/entity/-surgery-date-time/index.html
+$dokka.location:entity/SurgeryDateTime/SurgeryDateTime/#java.time.LocalDateTime/PointingToDeclaration/surgery-booking-integration-microservice/entity/-surgery-date-time/-surgery-date-time.html
+$dokka.location:entity/SurgeryDateTime/date/#/PointingToDeclaration/surgery-booking-integration-microservice/entity/-surgery-date-time/date.html
+$dokka.location:entity/SurgeryID///PointingToDeclaration/surgery-booking-integration-microservice/entity/-surgery-i-d/index.html
+$dokka.location:entity/SurgeryID/SurgeryID/#kotlin.String/PointingToDeclaration/surgery-booking-integration-microservice/entity/-surgery-i-d/-surgery-i-d.html
+$dokka.location:entity/SurgeryID/id/#/PointingToDeclaration/surgery-booking-integration-microservice/entity/-surgery-i-d/id.html
+$dokka.location:entity/SurgeryType///PointingToDeclaration/surgery-booking-integration-microservice/entity/-surgery-type/index.html
+$dokka.location:entity/SurgeryType/SurgeryType/#kotlin.String/PointingToDeclaration/surgery-booking-integration-microservice/entity/-surgery-type/-surgery-type.html
+$dokka.location:entity/SurgeryType/type/#/PointingToDeclaration/surgery-booking-integration-microservice/entity/-surgery-type/type.html
+$dokka.location:infrastructure.api////PointingToDeclaration/surgery-booking-integration-microservice/infrastructure.api/index.html
+$dokka.location:infrastructure.api/SurgicalBookingDataReceiver///PointingToDeclaration/surgery-booking-integration-microservice/infrastructure.api/-surgical-booking-data-receiver/index.html
+$dokka.location:infrastructure.api/SurgicalBookingDataReceiver/SurgicalBookingDataReceiver/#/PointingToDeclaration/surgery-booking-integration-microservice/infrastructure.api/-surgical-booking-data-receiver/-surgical-booking-data-receiver.html
+$dokka.location:infrastructure.api/SurgicalBookingDataReceiver/dispatcher/#io.ktor.server.application.Application/PointingToDeclaration/surgery-booking-integration-microservice/infrastructure.api/-surgical-booking-data-receiver/dispatcher.html
+$dokka.location:infrastructure.api/SurgicalBookingDataReceiver/start/#/PointingToDeclaration/surgery-booking-integration-microservice/infrastructure.api/-surgical-booking-data-receiver/start.html
+$dokka.location:infrastructure.digitaltwin////PointingToDeclaration/surgery-booking-integration-microservice/infrastructure.digitaltwin/index.html
+$dokka.location:infrastructure.digitaltwin//CLIENT_ID/#/PointingToDeclaration/surgery-booking-integration-microservice/infrastructure.digitaltwin/-c-l-i-e-n-t_-i-d.html
+$dokka.location:infrastructure.digitaltwin//CLIENT_SECRET/#/PointingToDeclaration/surgery-booking-integration-microservice/infrastructure.digitaltwin/-c-l-i-e-n-t_-s-e-c-r-e-t.html
+$dokka.location:infrastructure.digitaltwin//ENDPOINT/#/PointingToDeclaration/surgery-booking-integration-microservice/infrastructure.digitaltwin/-e-n-d-p-o-i-n-t.html
+$dokka.location:infrastructure.digitaltwin//TENANT_ID/#/PointingToDeclaration/surgery-booking-integration-microservice/infrastructure.digitaltwin/-t-e-n-a-n-t_-i-d.html
+$dokka.location:infrastructure.digitaltwin/DigitalTwinSurgeryBookingManager///PointingToDeclaration/surgery-booking-integration-microservice/infrastructure.digitaltwin/-digital-twin-surgery-booking-manager/index.html
+$dokka.location:infrastructure.digitaltwin/DigitalTwinSurgeryBookingManager/DigitalTwinSurgeryBookingManager/#/PointingToDeclaration/surgery-booking-integration-microservice/infrastructure.digitaltwin/-digital-twin-surgery-booking-manager/-digital-twin-surgery-booking-manager.html
+$dokka.location:infrastructure.digitaltwin/DigitalTwinSurgeryBookingManager/createSurgeryBookingDigitalTwin/#entity.SurgeryBooking/PointingToDeclaration/surgery-booking-integration-microservice/infrastructure.digitaltwin/-digital-twin-surgery-booking-manager/create-surgery-booking-digital-twin.html
+$dokka.location:infrastructure////PointingToDeclaration/surgery-booking-integration-microservice/infrastructure/index.html
+$dokka.location:infrastructure/Provider///PointingToDeclaration/surgery-booking-integration-microservice/infrastructure/-provider/index.html
+$dokka.location:infrastructure/Provider/digitalTwinSurgeryBookingManager/#/PointingToDeclaration/surgery-booking-integration-microservice/infrastructure/-provider/digital-twin-surgery-booking-manager.html
+$dokka.location:usecase.repository////PointingToDeclaration/surgery-booking-integration-microservice/usecase.repository/index.html
+$dokka.location:usecase.repository/SurgeryBookingRepository///PointingToDeclaration/surgery-booking-integration-microservice/usecase.repository/-surgery-booking-repository/index.html
+$dokka.location:usecase.repository/SurgeryBookingRepository/createSurgeryBooking/#entity.SurgeryBooking/PointingToDeclaration/surgery-booking-integration-microservice/usecase.repository/-surgery-booking-repository/create-surgery-booking.html
+application
+application.presenters.deserializer
+entity
+infrastructure
+infrastructure.api
+infrastructure.digitaltwin
+usecase.repository
+

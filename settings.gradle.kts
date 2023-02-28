@@ -11,7 +11,7 @@ plugins {
     id("org.danilopianini.gradle-pre-commit-git-hooks") version "1.1.3"
 }
 
-rootProject.name = "kotlin-template-project"
+rootProject.name = "surgery-booking-integration-microservice"
 
 gradleEnterprise {
     buildScan {

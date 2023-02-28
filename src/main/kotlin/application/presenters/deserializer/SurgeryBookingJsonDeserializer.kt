@@ -15,12 +15,12 @@ import application.presenters.deserializer.SurgeryBookingJsonKeys.SURGERY_ID
 import application.presenters.deserializer.SurgeryBookingJsonKeys.SURGERY_TYPE
 import com.google.gson.Gson
 import com.google.gson.JsonObject
-import entities.HealthProfessionalID
-import entities.HealthcareUserID
-import entities.SurgeryBooking
-import entities.SurgeryDateTime
-import entities.SurgeryID
-import entities.SurgeryType
+import entity.HealthProfessionalID
+import entity.HealthcareUserID
+import entity.SurgeryBooking
+import entity.SurgeryDateTime
+import entity.SurgeryID
+import entity.SurgeryType
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 

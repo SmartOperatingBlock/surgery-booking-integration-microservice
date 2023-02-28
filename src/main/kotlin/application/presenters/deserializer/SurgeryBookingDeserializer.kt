@@ -8,7 +8,7 @@
 
 package application.presenters.deserializer
 
-import entities.SurgeryBooking
+import entity.SurgeryBooking
 
 /**
  * Interface of a generic data deserializer.

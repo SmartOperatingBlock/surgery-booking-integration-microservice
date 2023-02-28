@@ -8,7 +8,7 @@
 
 package application
 
-import entities.SurgeryBooking
+import entity.SurgeryBooking
 import usecase.repository.SurgeryBookingRepository
 /**
  * A controller for surgery booking.

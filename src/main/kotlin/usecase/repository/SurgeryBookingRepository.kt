@@ -8,7 +8,7 @@
 
 package usecase.repository
 
-import entities.SurgeryBooking
+import entity.SurgeryBooking
 
 /**
  * Interface that models the repository for surgery booking.

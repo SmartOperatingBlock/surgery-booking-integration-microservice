@@ -56,6 +56,11 @@ $dokka.location:infrastructure.digitaltwin//TENANT_ID/#/PointingToDeclaration/s
 $dokka.location:infrastructure.digitaltwin/DigitalTwinSurgeryBookingManager///PointingToDeclaration/surgery-booking-integration-microservice/infrastructure.digitaltwin/-digital-twin-surgery-booking-manager/index.html
 $dokka.location:infrastructure.digitaltwin/DigitalTwinSurgeryBookingManager/DigitalTwinSurgeryBookingManager/#/PointingToDeclaration/surgery-booking-integration-microservice/infrastructure.digitaltwin/-digital-twin-surgery-booking-manager/-digital-twin-surgery-booking-manager.html
 $dokka.location:infrastructure.digitaltwin/DigitalTwinSurgeryBookingManager/createSurgeryBookingDigitalTwin/#entity.SurgeryBooking/PointingToDeclaration/surgery-booking-integration-microservice/infrastructure.digitaltwin/-digital-twin-surgery-booking-manager/create-surgery-booking-digital-twin.html
+$dokka.location:infrastructure.digitaltwin/HealthcareUser///PointingToDeclaration/surgery-booking-integration-microservice/infrastructure.digitaltwin/-healthcare-user/index.html
+$dokka.location:infrastructure.digitaltwin/HealthcareUser/HealthcareUser/#kotlin.String#kotlin.String#kotlin.String/PointingToDeclaration/surgery-booking-integration-microservice/infrastructure.digitaltwin/-healthcare-user/-healthcare-user.html
+$dokka.location:infrastructure.digitaltwin/HealthcareUser/name/#/PointingToDeclaration/surgery-booking-integration-microservice/infrastructure.digitaltwin/-healthcare-user/name.html
+$dokka.location:infrastructure.digitaltwin/HealthcareUser/surname/#/PointingToDeclaration/surgery-booking-integration-microservice/infrastructure.digitaltwin/-healthcare-user/surname.html
+$dokka.location:infrastructure.digitaltwin/HealthcareUser/taxCode/#/PointingToDeclaration/surgery-booking-integration-microservice/infrastructure.digitaltwin/-healthcare-user/tax-code.html
 $dokka.location:infrastructure////PointingToDeclaration/surgery-booking-integration-microservice/infrastructure/index.html
 $dokka.location:infrastructure/Provider///PointingToDeclaration/surgery-booking-integration-microservice/infrastructure/-provider/index.html
 $dokka.location:infrastructure/Provider/digitalTwinSurgeryBookingManager/#/PointingToDeclaration/surgery-booking-integration-microservice/infrastructure/-provider/digital-twin-surgery-booking-manager.html

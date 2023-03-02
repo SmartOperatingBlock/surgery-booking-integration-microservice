@@ -1,3 +1,16 @@
+## [1.0.1](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/compare/1.0.0...1.0.1) (2023-03-02)
+
+
+### General maintenance
+
+* add ktor client dependencies ([12bdf63](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/12bdf63a2df8fbf71dfaa691e07606279808ef07))
+* add request to get healthcare user information ([c62b0e1](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/c62b0e14873fdc0c71a2c61012370c99c685e64b))
+
+
+### Documentation
+
+* improve doc ([1f5eb05](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/1f5eb053119be622b404705a4549ab8b0dfa817f))
+
 ## 1.0.0 (2023-03-02)
 
 

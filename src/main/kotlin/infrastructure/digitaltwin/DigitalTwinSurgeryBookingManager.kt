@@ -17,6 +17,11 @@ import com.azure.digitaltwins.core.DigitalTwinsClientBuilder
 import com.azure.digitaltwins.core.implementation.models.ErrorResponseException
 import com.azure.identity.ClientSecretCredentialBuilder
 import entity.SurgeryBooking
+import io.ktor.client.HttpClient
+import io.ktor.client.call.body
+import io.ktor.client.engine.cio.CIO
+import io.ktor.client.request.get
+import kotlinx.coroutines.runBlocking
 
 /**
  * The Azure endpoint.
@@ -37,13 +42,12 @@ const val CLIENT_ID = "52e143e0-1993-436f-ac31-8ba5787445e4"
  * The Azure client secret.
  */
 const val CLIENT_SECRET = "zuu8Q~0JA2NnKpnXEDMyew4WdBcw.XIjYWwK8b1R"
-
 /**
  * Manager that manage the update of the digital twin on Azure digital twin platform.
  */
 class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
 
-    private val client: DigitalTwinsClient = DigitalTwinsClientBuilder()
+    private val digitalTwinClient: DigitalTwinsClient = DigitalTwinsClientBuilder()
         .credential(
             ClientSecretCredentialBuilder()
                 .tenantId(TENANT_ID)
@@ -59,24 +63,30 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
      */
     override fun createSurgeryBookingDigitalTwin(surgeryBooking: SurgeryBooking): Boolean {
         try {
-            client.createOrReplaceDigitalTwin(
+            digitalTwinClient.createOrReplaceDigitalTwin(
                 surgeryBooking.surgeryID.id,
                 this.createDigitalTwin(surgeryBooking),
                 BasicDigitalTwin::class.java
             )
 
             val surgeryHealthProfessionalRelationShip = this.createSurgeryHealthProfessionalRelationship(surgeryBooking)
-            client.createOrReplaceRelationship(
+            digitalTwinClient.createOrReplaceRelationship(
                 surgeryHealthProfessionalRelationShip.sourceId,
                 surgeryHealthProfessionalRelationShip.id,
                 surgeryHealthProfessionalRelationShip,
                 BasicRelationship::class.java
             )
 
-            if (!checkIfDigitalTwinExists(surgeryBooking.healthcareUserID.id)) requestHealthCareUserInformation()
+            if (!checkIfDigitalTwinExists(surgeryBooking.healthcareUserID.id)) {
+                requestHealthCareUserInformation(surgeryBooking.healthProfessionalID.id)?.let {
+                    createDigitalTwin(
+                        it
+                    )
+                }
+            }
 
             val surgeryHealthcareUserRelationship = this.createSurgeryHealthCareUserRelationship(surgeryBooking)
-            client.createOrReplaceRelationship(
+            digitalTwinClient.createOrReplaceRelationship(
                 surgeryHealthcareUserRelationship.sourceId,
                 surgeryHealthcareUserRelationship.id,
                 surgeryHealthcareUserRelationship,
@@ -113,7 +123,9 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
      * Check if the digital twin exists.
      */
     private fun checkIfDigitalTwinExists(digitalTwinId: String) =
-        client.query("SELECT * FROM digitaltwins WHERE \$dtId = '$digitalTwinId'", String::class.java).count() > 0
+        digitalTwinClient.query(
+            "SELECT * FROM digitaltwins WHERE \$dtId = '$digitalTwinId'", String::class.java
+        ).count() > 0
 
     /**
      * Create a [BasicDigitalTwin] of a surgery booking.
@@ -128,7 +140,30 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
     }
 
     /**
+     * Create a [BasicDigitalTwin] of a healthcare user.
+     */
+    private fun createDigitalTwin(healtCareUser: HealthcareUser): BasicDigitalTwin {
+        val digitalTwin = BasicDigitalTwin(healtCareUser.taxCode)
+        digitalTwin.metadata = BasicDigitalTwinMetadata()
+            .setModelId("dtmi:io:github:smartoperatingblock:HealthcareUser;1")
+        digitalTwin.contents["name"] = healtCareUser.name
+        digitalTwin.contents["surname"] = healtCareUser.surname
+        return digitalTwin
+    }
+
+    /**
      * Get information about the health care user.
      */
-    private fun requestHealthCareUserInformation(): Nothing = TODO()
+    private fun requestHealthCareUserInformation(healthcareUserTaxCode: String): HealthcareUser? =
+        runBlocking {
+            val client = HttpClient(CIO)
+            val response: Map<String, Any> = client.get(
+                "https://localhost:8080/api/patients/$healthcareUserTaxCode"
+            ).body()
+            val name = response["name"]
+            val surname = response["surname"]
+            if (name != null && surname != null) {
+                HealthcareUser(healthcareUserTaxCode, name.toString(), surname.toString())
+            } else null
+        }
 }

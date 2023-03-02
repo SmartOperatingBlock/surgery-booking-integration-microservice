@@ -27,6 +27,8 @@ dependencies {
     implementation(libs.azure.digitaltwins)
     implementation(libs.ktor.core)
     implementation(libs.ktor.netty)
+    implementation(libs.ktor.client.cio)
+    implementation(libs.ktor.client.core)
     testImplementation(libs.bundles.kotlin.testing)
 }
 

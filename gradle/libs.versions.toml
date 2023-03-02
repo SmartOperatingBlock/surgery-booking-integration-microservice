@@ -14,6 +14,8 @@ azure-digitaltwins = { module = "com.azure:azure-digitaltwins-core", version = "
 ktor-core = { module = "io.ktor:ktor-server-core", version.ref = "ktor" }
 ktor-netty = { module = "io.ktor:ktor-server-netty", version.ref = "ktor" }
 archunit = { module = "com.tngtech.archunit:archunit-junit5", version = "1.0.1" }
+ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 
 [bundles]
 kotlin-testing = ["archunit", "kotest-junit5", "kotest-assertions-core", "kotest-assertions-core-jvm"]

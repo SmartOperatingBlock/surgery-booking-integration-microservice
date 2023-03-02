@@ -17,6 +17,8 @@ interface SurgeryBookingDeserializer <I> {
 
     /**
      * Deserializes the data.
+     * @param data the data to deserialize.
+     * @return an instance of surgery booking.
      */
     fun deserialize(data: I): SurgeryBooking
 }

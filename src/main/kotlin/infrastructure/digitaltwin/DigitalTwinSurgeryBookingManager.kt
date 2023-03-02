@@ -58,9 +58,6 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
         .endpoint(ENDPOINT)
         .buildClient()
 
-    /**
-     * Updates the azure digital twin platform with the surgery booking information.
-     */
     override fun createSurgeryBookingDigitalTwin(surgeryBooking: SurgeryBooking): Boolean {
         try {
             digitalTwinClient.createOrReplaceDigitalTwin(
@@ -101,6 +98,8 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
 
     /**
      * Create a relationship between surgery booking dt and health professional dt.
+     * @param surgeryBooking the surgery booking.
+     * @return a [BasicRelationship] between surgery booking and the health professional.
      */
     private fun createSurgeryHealthProfessionalRelationship(surgeryBooking: SurgeryBooking) =
         BasicRelationship(
@@ -111,6 +110,8 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
 
     /**
      * Create a relationship between surgery booking dt and healthcare user dt.
+     * @param surgeryBooking the surgery booking.
+     * @return a [BasicRelationship] between surgery booking and the healthcare user.
      */
     private fun createSurgeryHealthCareUserRelationship(surgeryBooking: SurgeryBooking) =
         BasicRelationship(
@@ -121,6 +122,8 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
 
     /**
      * Check if the digital twin exists.
+     * @param digitalTwinId the id of the digital twin.
+     * @return true if the digital twin exists, false otherwise.
      */
     private fun checkIfDigitalTwinExists(digitalTwinId: String) =
         digitalTwinClient.query(
@@ -129,6 +132,8 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
 
     /**
      * Create a [BasicDigitalTwin] of a surgery booking.
+     * @param surgeryBooking the surgery booking.
+     * @return a [DigitalTwinsClient] of the surgery booking
      */
     private fun createDigitalTwin(surgeryBooking: SurgeryBooking): BasicDigitalTwin {
         val digitalTwin = BasicDigitalTwin(surgeryBooking.surgeryID.id)
@@ -141,18 +146,22 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
 
     /**
      * Create a [BasicDigitalTwin] of a healthcare user.
+     * @param healthCareUser the healthcare user.
+     * @return a [BasicDigitalTwin] of the healthcare user.
      */
-    private fun createDigitalTwin(healtCareUser: HealthcareUser): BasicDigitalTwin {
-        val digitalTwin = BasicDigitalTwin(healtCareUser.taxCode)
+    private fun createDigitalTwin(healthCareUser: HealthcareUser): BasicDigitalTwin {
+        val digitalTwin = BasicDigitalTwin(healthCareUser.taxCode)
         digitalTwin.metadata = BasicDigitalTwinMetadata()
             .setModelId("dtmi:io:github:smartoperatingblock:HealthcareUser;1")
-        digitalTwin.contents["name"] = healtCareUser.name
-        digitalTwin.contents["surname"] = healtCareUser.surname
+        digitalTwin.contents["name"] = healthCareUser.name
+        digitalTwin.contents["surname"] = healthCareUser.surname
         return digitalTwin
     }
 
     /**
      * Get information about the health care user.
+     * @param healthcareUserTaxCode the tax code of the healthcare user.
+     * @return an instance of [HealthcareUser] if the request success, null otherwise.
      */
     private fun requestHealthCareUserInformation(healthcareUserTaxCode: String): HealthcareUser? =
         runBlocking {

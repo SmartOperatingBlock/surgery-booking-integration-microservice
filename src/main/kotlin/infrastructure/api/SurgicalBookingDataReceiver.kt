@@ -35,6 +35,7 @@ class SurgicalBookingDataReceiver {
 
     /**
      * Dispatcher for http requests.
+     * @param app an application, capable of handling request.
      */
     fun dispatcher(app: Application) {
         with(app) {
@@ -44,6 +45,7 @@ class SurgicalBookingDataReceiver {
 
     /**
      * Receive data about surgery booking.
+     * @param app an application, capable of handling request.
      */
     private fun receiveSurgeryBooking(app: Application) {
         with(app) {

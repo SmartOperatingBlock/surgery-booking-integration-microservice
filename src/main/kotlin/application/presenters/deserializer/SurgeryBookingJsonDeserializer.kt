@@ -29,10 +29,6 @@ import java.time.format.DateTimeFormatter
  */
 class SurgeryBookingJsonDeserializer : SurgeryBookingDeserializer<String> {
 
-    /**
-     * Deserializes the json returning an instance of [SurgeryBooking].
-     *
-     */
     override fun deserialize(data: String): SurgeryBooking {
         val jsonObject = Gson().fromJson(data, JsonObject::class.java)
         val surgeryID = SurgeryID(jsonObject.getSurgeryID())
@@ -46,26 +42,31 @@ class SurgeryBookingJsonDeserializer : SurgeryBookingDeserializer<String> {
 
     /**
      * Gets the surgery id from [JsonObject].
+     * @return the surgery id.
      */
     private fun JsonObject.getSurgeryID(): String = this[SURGERY_ID].asString
 
     /**
      * Gets the type of the surgery from [JsonObject].
+     * @return the surgery type.
      */
     private fun JsonObject.getSurgeryType(): String = this[SURGERY_TYPE].asString
 
     /**
      * Gets the healthcare user id from [JsonObject].
+     * @return the healthcare user id.
      */
     private fun JsonObject.getHealthcareUserID(): String = this[HEALTH_CARE_USER_ID].asString
 
     /**
      * Gets the health professional id from [JsonObject].
+     * @return the healt professional id.
      */
     private fun JsonObject.getHealthProfessionalID(): String = this[HEALTH_PROFESSIONAL_ID].asString
 
     /**
      * Gets the health professional id from [JsonObject].
+     * @return the surgery date time.
      */
     private fun JsonObject.getSurgeryDateTime(): String = this[SURGERY_DATE_TIME].asString
 }

@@ -18,6 +18,7 @@ interface SurgeryBookingManager {
     /**
      * Manages the surgery booking information.
      * @param surgeryBooking the surgery booking entity.
+     * @return true if the surgery booking was created, false otherwise.
      */
     fun createSurgeryBookingDigitalTwin(surgeryBooking: SurgeryBooking): Boolean
 }

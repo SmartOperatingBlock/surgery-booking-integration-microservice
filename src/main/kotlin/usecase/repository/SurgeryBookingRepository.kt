@@ -15,7 +15,8 @@ import entity.SurgeryBooking
  */
 interface SurgeryBookingRepository {
     /**
-     * Creates a [SurgeryBooking].
+     * Creates a surgery booking.
+     * @param surgeryBooking the surgery booking.
      * @return true if the surgery booking was created, false otherwise.
      */
     fun createSurgeryBooking(surgeryBooking: SurgeryBooking): Boolean

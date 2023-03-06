@@ -1,3 +1,20 @@
+## [1.0.2](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/compare/1.0.1...1.0.2) (2023-03-06)
+
+
+### Dependency updates
+
+* **deps:** update dependency gradle to v8.0.2 ([9605783](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/960578380a2f315ea4e1a036b68d1131d64ac952))
+* **deps:** update ktor to v2.3.0-eap-617 ([3faa9e6](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/3faa9e6779357bdaa0d82be80d017fabc7e53486))
+* **deps:** update ktor to v2.3.0-eap-618 ([06baa0a](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/06baa0a893668602f8f0eea92c003132a5079f1d))
+* **deps:** update plugin com.gradle.enterprise to v3.12.4 ([5b8ed6d](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/5b8ed6d3c7e0057cb7a0d78cc26fb9f630ac30ff))
+* **deps:** update plugin kotlin-qa to v0.36.0 ([d2b97f8](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/d2b97f841d7b4f5a59d84e25a6074f88565c3b97))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v1.1.5 ([29155f1](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/29155f19bce8ed883a3a391a4d7fd9816dab4c45))
+
+
+### Documentation
+
+* **deps:** update plugin dokka to v1.8.10 ([48520f5](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/48520f5a1b3f8fece2c31dbb8b875cf2541d5b9b))
+
 ## [1.0.1](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/compare/1.0.0...1.0.1) (2023-03-02)
 
 

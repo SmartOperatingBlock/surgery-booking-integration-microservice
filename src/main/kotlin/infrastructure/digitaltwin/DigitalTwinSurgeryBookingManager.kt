@@ -15,7 +15,7 @@ import com.azure.digitaltwins.core.BasicRelationship
 import com.azure.digitaltwins.core.DigitalTwinsClient
 import com.azure.digitaltwins.core.DigitalTwinsClientBuilder
 import com.azure.digitaltwins.core.implementation.models.ErrorResponseException
-import com.azure.identity.ClientSecretCredentialBuilder
+import com.azure.identity.DefaultAzureCredentialBuilder
 import entity.SurgeryBooking
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
@@ -24,38 +24,19 @@ import io.ktor.client.request.get
 import kotlinx.coroutines.runBlocking
 
 /**
- * The Azure endpoint.
- */
-const val ENDPOINT = "https://digital-twin-layer.api.neu.digitaltwins.azure.net"
-
-/**
- * The Azure tenant id.
- */
-const val TENANT_ID = "8e97c84a-c23e-4463-8faf-d9a974450bc1"
-
-/**
- * The Azure client id.
- */
-const val CLIENT_ID = "52e143e0-1993-436f-ac31-8ba5787445e4"
-
-/**
- * The Azure client secret.
- */
-const val CLIENT_SECRET = "zuu8Q~0JA2NnKpnXEDMyew4WdBcw.XIjYWwK8b1R"
-/**
  * Manager that manage the update of the digital twin on Azure digital twin platform.
  */
 class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
+    init {
+        checkNotNull(System.getenv(dtAppIdVariable)) { "azure client app id required" }
+        checkNotNull(System.getenv(dtTenantVariable)) { "azure tenant id required" }
+        checkNotNull(System.getenv(dtAppSecretVariable)) { "azure client secret id required" }
+        checkNotNull(System.getenv(dtEndpointVariable)) { "azure dt endpoint required" }
+    }
 
-    private val digitalTwinClient: DigitalTwinsClient = DigitalTwinsClientBuilder()
-        .credential(
-            ClientSecretCredentialBuilder()
-                .tenantId(TENANT_ID)
-                .clientId(CLIENT_ID)
-                .clientSecret(CLIENT_SECRET)
-                .build()
-        )
-        .endpoint(ENDPOINT)
+    private val digitalTwinClient = DigitalTwinsClientBuilder()
+        .credential(DefaultAzureCredentialBuilder().build())
+        .endpoint(System.getenv(dtEndpointVariable))
         .buildClient()
 
     override fun createSurgeryBookingDigitalTwin(surgeryBooking: SurgeryBooking): Boolean {
@@ -76,17 +57,32 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
 
             if (!checkIfDigitalTwinExists(surgeryBooking.healthcareUserID.id)) {
                 requestHealthCareUserInformation(surgeryBooking.healthProfessionalID.id)?.let {
-                    createDigitalTwin(
-                        it
+                    val healthCareUserDT = createDigitalTwin(it)
+                    digitalTwinClient.createOrReplaceDigitalTwin(
+                        it.taxCode,
+                        healthCareUserDT,
+                        BasicDigitalTwin::class.java
                     )
                 }
             }
 
+            val patientDT = this.createDigitalTwin(Patient(surgeryBooking.patientID.id))
+            digitalTwinClient.createOrReplaceDigitalTwin(patientDT.id, patientDT, BasicDigitalTwin::class.java)
+
             val surgeryHealthcareUserRelationship = this.createSurgeryHealthCareUserRelationship(surgeryBooking)
+            val patientHealthcareUserRelationship = this.createPatientHealthCareUserRelationship(surgeryBooking)
+
             digitalTwinClient.createOrReplaceRelationship(
                 surgeryHealthcareUserRelationship.sourceId,
                 surgeryHealthcareUserRelationship.id,
                 surgeryHealthcareUserRelationship,
+                BasicRelationship::class.java
+            )
+
+            digitalTwinClient.createOrReplaceRelationship(
+                patientHealthcareUserRelationship.sourceId,
+                patientHealthcareUserRelationship.id,
+                patientHealthcareUserRelationship,
                 BasicRelationship::class.java
             )
             return true
@@ -118,6 +114,18 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
             "${surgeryBooking.surgeryID.id}-${surgeryBooking.healthcareUserID.id}",
             surgeryBooking.surgeryID.id, surgeryBooking.healthcareUserID.id,
             "rel_healthcare_user"
+        )
+
+    /**
+     * Create a relationship between patient dt and healthcare user dt.
+     * @param surgeryBooking the surgery booking.
+     * @return a [BasicRelationship] between patient and the healthcare user.
+     */
+    private fun createPatientHealthCareUserRelationship(surgeryBooking: SurgeryBooking) =
+        BasicRelationship(
+            "${surgeryBooking.patientID.id}-${surgeryBooking.healthcareUserID.id}",
+            surgeryBooking.patientID.id, surgeryBooking.healthcareUserID.id,
+            "rel_is_associated"
         )
 
     /**
@@ -159,6 +167,18 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
     }
 
     /**
+     * Create a [BasicDigitalTwin] of a patient.
+     * @param patient the patient.
+     * @return a [BasicDigitalTwin] of the patient.
+     */
+    private fun createDigitalTwin(patient: Patient): BasicDigitalTwin {
+        val digitalTwin = BasicDigitalTwin(patient.id)
+        digitalTwin.metadata = BasicDigitalTwinMetadata()
+            .setModelId("dtmi:io:github:smartoperatingblock:Patient;1")
+        return digitalTwin
+    }
+
+    /**
      * Get information about the health care user.
      * @param healthcareUserTaxCode the tax code of the healthcare user.
      * @return an instance of [HealthcareUser] if the request success, null otherwise.
@@ -175,4 +195,11 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
                 HealthcareUser(healthcareUserTaxCode, name.toString(), surname.toString())
             } else null
         }
+
+    companion object {
+        private const val dtAppIdVariable = "AZURE_CLIENT_ID"
+        private const val dtTenantVariable = "AZURE_TENANT_ID"
+        private const val dtAppSecretVariable = "AZURE_CLIENT_SECRET"
+        private const val dtEndpointVariable = "AZURE_DT_ENDPOINT"
+    }
 }

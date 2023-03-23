@@ -17,13 +17,15 @@ import java.time.LocalDateTime
  * @param healthcareUserID the tax code of the patient.
  * @param healthProfessionalID the id of the health professional.
  * @param surgeryDateTime the date time of the surgery.
+ * @param patientID the id of the patient.
  */
 class SurgeryBooking(
     val surgeryID: SurgeryID,
     val surgeryType: SurgeryType,
     val healthcareUserID: HealthcareUserID,
     val healthProfessionalID: HealthProfessionalID,
-    val surgeryDateTime: SurgeryDateTime
+    val surgeryDateTime: SurgeryDateTime,
+    val patientID: PatientID
 )
 
 /**
@@ -61,6 +63,16 @@ data class HealthcareUserID(val id: String) {
  * @param id the id of the health professional.
  */
 data class HealthProfessionalID(val id: String) {
+    init {
+        require(id.isNotEmpty())
+    }
+}
+
+/**
+ * The id of the patient of the intervention.
+ * @param id the id of the patient.
+ */
+data class PatientID(val id: String) {
     init {
         require(id.isNotEmpty())
     }

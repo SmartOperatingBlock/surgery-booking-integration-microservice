@@ -34,6 +34,11 @@ object SurgeryBookingJsonKeys {
     const val HEALTH_PROFESSIONAL_ID = "healthProfessionalID"
 
     /**
+     * The key of the patient id in the json.
+     */
+    const val PATIENT_ID = "patientID"
+
+    /**
      * The key of the date time of the surgery in the json.
      */
     const val SURGERY_DATE_TIME = "surgeryDateTime"

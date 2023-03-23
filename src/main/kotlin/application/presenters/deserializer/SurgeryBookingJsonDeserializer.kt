@@ -10,6 +10,7 @@ package application.presenters.deserializer
 
 import application.presenters.deserializer.SurgeryBookingJsonKeys.HEALTH_CARE_USER_ID
 import application.presenters.deserializer.SurgeryBookingJsonKeys.HEALTH_PROFESSIONAL_ID
+import application.presenters.deserializer.SurgeryBookingJsonKeys.PATIENT_ID
 import application.presenters.deserializer.SurgeryBookingJsonKeys.SURGERY_DATE_TIME
 import application.presenters.deserializer.SurgeryBookingJsonKeys.SURGERY_ID
 import application.presenters.deserializer.SurgeryBookingJsonKeys.SURGERY_TYPE
@@ -17,6 +18,7 @@ import com.google.gson.Gson
 import com.google.gson.JsonObject
 import entity.HealthProfessionalID
 import entity.HealthcareUserID
+import entity.PatientID
 import entity.SurgeryBooking
 import entity.SurgeryDateTime
 import entity.SurgeryID
@@ -37,7 +39,15 @@ class SurgeryBookingJsonDeserializer : SurgeryBookingDeserializer<String> {
         val healthProfessionalID = HealthProfessionalID(jsonObject.getHealthProfessionalID())
         val formatter: DateTimeFormatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME
         val surgeryDateTime = SurgeryDateTime(LocalDateTime.parse(jsonObject.getSurgeryDateTime(), formatter))
-        return SurgeryBooking(surgeryID, surgeryType, healthcareUserID, healthProfessionalID, surgeryDateTime)
+        val patientID = PatientID(jsonObject.getPatientID())
+        return SurgeryBooking(
+            surgeryID,
+            surgeryType,
+            healthcareUserID,
+            healthProfessionalID,
+            surgeryDateTime,
+            patientID
+        )
     }
 
     /**
@@ -59,8 +69,14 @@ class SurgeryBookingJsonDeserializer : SurgeryBookingDeserializer<String> {
     private fun JsonObject.getHealthcareUserID(): String = this[HEALTH_CARE_USER_ID].asString
 
     /**
+     * Gets the patient id from [JsonObject].
+     * @return the patient id.
+     */
+    private fun JsonObject.getPatientID(): String = this[PATIENT_ID].asString
+
+    /**
      * Gets the health professional id from [JsonObject].
-     * @return the healt professional id.
+     * @return the health professional id.
      */
     private fun JsonObject.getHealthProfessionalID(): String = this[HEALTH_PROFESSIONAL_ID].asString
 

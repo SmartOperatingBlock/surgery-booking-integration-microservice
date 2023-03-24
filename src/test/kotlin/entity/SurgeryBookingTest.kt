@@ -10,7 +10,7 @@ package entity
 
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.spec.style.StringSpec
-import java.time.LocalDateTime
+import java.time.Instant
 
 class SurgeryBookingTest : StringSpec({
     "surgery id should not be empty" {
@@ -35,7 +35,7 @@ class SurgeryBookingTest : StringSpec({
     }
     "the surgery date time should be in the future" {
         shouldThrow<java.lang.IllegalArgumentException> {
-            SurgeryDateTime(LocalDateTime.MIN)
+            SurgeryDateTime(Instant.MIN)
         }
     }
 })

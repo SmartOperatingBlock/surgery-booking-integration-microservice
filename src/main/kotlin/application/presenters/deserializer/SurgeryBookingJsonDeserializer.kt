@@ -23,8 +23,7 @@ import entity.SurgeryBooking
 import entity.SurgeryDateTime
 import entity.SurgeryID
 import entity.SurgeryType
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
+import java.time.Instant
 
 /**
  * A json deserializer implementation for [SurgeryBooking].
@@ -37,8 +36,7 @@ class SurgeryBookingJsonDeserializer : SurgeryBookingDeserializer<String> {
         val surgeryType = SurgeryType(jsonObject.getSurgeryType())
         val healthcareUserID = HealthcareUserID(jsonObject.getHealthcareUserID())
         val healthProfessionalID = HealthProfessionalID(jsonObject.getHealthProfessionalID())
-        val formatter: DateTimeFormatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME
-        val surgeryDateTime = SurgeryDateTime(LocalDateTime.parse(jsonObject.getSurgeryDateTime(), formatter))
+        val surgeryDateTime = SurgeryDateTime(Instant.parse(jsonObject.getSurgeryDateTime()))
         val patientID = PatientID(jsonObject.getPatientID())
         return SurgeryBooking(
             surgeryID,

@@ -8,7 +8,7 @@
 
 package entity
 
-import java.time.LocalDateTime
+import java.time.Instant
 
 /**
  * A surgery booking for an elective interventions.
@@ -82,8 +82,8 @@ data class PatientID(val id: String) {
  * The date time of the surgery.
  * @param date the id of the health professional.
  */
-data class SurgeryDateTime(val date: LocalDateTime) {
+data class SurgeryDateTime(val date: Instant) {
     init {
-        require(date.isAfter(LocalDateTime.now()))
+        require(date.isAfter(Instant.now()))
     }
 }

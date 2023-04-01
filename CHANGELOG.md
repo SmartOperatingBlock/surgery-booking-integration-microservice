@@ -1,3 +1,22 @@
+## [1.1.1](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/compare/1.1.0...1.1.1) (2023-04-01)
+
+
+### Dependency updates
+
+* **core-deps:** update dependency org.jetbrains.kotlin.jvm to v1.8.20 ([ce6f7a8](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/ce6f7a842075431370dc4927d3eb338b046ccb9f))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.20 ([17e4ec2](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/17e4ec20a25c484e72103ee1f1d3b607aa371a5b))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.21 ([8d7b36a](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/8d7b36a65702f362159ca79d7a925ee4bfc78587))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.22 ([473b958](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/473b9586946a758b23509459acf446d497afde86))
+* **deps:** update ktor to v2.3.0-eap-629 ([bb4fcbc](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/bb4fcbcde7f494174baa204ed03f769539825f8a))
+* **deps:** update ktor to v2.3.0-eap-630 ([16b5239](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/16b52395938d9851c7ecb002d9010a7ca285ce57))
+* **deps:** update ktor to v2.3.0-eap-631 ([5cc12a3](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/5cc12a31a88e297bd0be35c455d2241cbc0a2478))
+* **deps:** update ktor to v2.3.0-eap-632 ([67ef365](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/67ef365033971e85d0ee74e93382afb5d0781ecc))
+* **deps:** update ktor to v2.3.0-eap-633 ([ccd3564](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/ccd3564650c380fbc17725dcd27bdea08bb79a8f))
+* **deps:** update ktor to v2.3.0-eap-634 ([7b1c208](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/7b1c208fabfbaceb2039500b6f2679aa52897909))
+* **deps:** update ktor to v2.3.0-eap-635 ([af6599f](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/af6599f6c02c1ad94b868359eefb1f373e7b7ea3))
+* **deps:** update ktor to v2.3.0-eap-636 ([7433bd3](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/7433bd34cb911de840de91976b8986bca47e47da))
+* **deps:** update plugin com.gradle.enterprise to v3.12.6 ([1f61f63](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/1f61f63afdb97192e1a42261dd30521263cf3925))
+
 ## [1.1.0](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/compare/1.0.2...1.1.0) (2023-03-23)
 
 

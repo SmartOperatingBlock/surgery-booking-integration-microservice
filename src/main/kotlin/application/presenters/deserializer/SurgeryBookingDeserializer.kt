@@ -13,7 +13,7 @@ import entity.SurgeryBooking
 /**
  * Interface of a generic data deserializer.
  */
-interface SurgeryBookingDeserializer <I> {
+interface SurgeryBookingDeserializer<I> {
 
     /**
      * Deserializes the data.

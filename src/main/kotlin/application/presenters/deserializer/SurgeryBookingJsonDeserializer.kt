@@ -46,7 +46,7 @@ class SurgeryBookingJsonDeserializer : SurgeryBookingDeserializer<String> {
             healthcareUserID,
             healthProfessionalID,
             surgeryDateTime,
-            patientID
+            patientID,
         )
     }
 

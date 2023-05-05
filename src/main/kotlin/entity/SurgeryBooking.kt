@@ -25,7 +25,7 @@ class SurgeryBooking(
     val healthcareUserID: HealthcareUserID,
     val healthProfessionalID: HealthProfessionalID,
     val surgeryDateTime: SurgeryDateTime,
-    val patientID: PatientID
+    val patientID: PatientID,
 )
 
 /**

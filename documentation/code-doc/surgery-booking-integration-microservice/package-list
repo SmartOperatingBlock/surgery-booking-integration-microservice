@@ -40,7 +40,7 @@ $dokka.location:entity/SurgeryBooking/surgeryDateTime/#/PointingToDeclaration/s
 $dokka.location:entity/SurgeryBooking/surgeryID/#/PointingToDeclaration/surgery-booking-integration-microservice/entity/-surgery-booking/surgery-i-d.html
 $dokka.location:entity/SurgeryBooking/surgeryType/#/PointingToDeclaration/surgery-booking-integration-microservice/entity/-surgery-booking/surgery-type.html
 $dokka.location:entity/SurgeryDateTime///PointingToDeclaration/surgery-booking-integration-microservice/entity/-surgery-date-time/index.html
-$dokka.location:entity/SurgeryDateTime/SurgeryDateTime/#java.time.LocalDateTime/PointingToDeclaration/surgery-booking-integration-microservice/entity/-surgery-date-time/-surgery-date-time.html
+$dokka.location:entity/SurgeryDateTime/SurgeryDateTime/#java.time.Instant/PointingToDeclaration/surgery-booking-integration-microservice/entity/-surgery-date-time/-surgery-date-time.html
 $dokka.location:entity/SurgeryDateTime/date/#/PointingToDeclaration/surgery-booking-integration-microservice/entity/-surgery-date-time/date.html
 $dokka.location:entity/SurgeryID///PointingToDeclaration/surgery-booking-integration-microservice/entity/-surgery-i-d/index.html
 $dokka.location:entity/SurgeryID/SurgeryID/#kotlin.String/PointingToDeclaration/surgery-booking-integration-microservice/entity/-surgery-i-d/-surgery-i-d.html

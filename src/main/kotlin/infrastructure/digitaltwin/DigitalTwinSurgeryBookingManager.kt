@@ -72,6 +72,7 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
 
             val surgeryHealthcareUserRelationship = this.createSurgeryHealthCareUserRelationship(surgeryBooking)
             val patientHealthcareUserRelationship = this.createPatientHealthCareUserRelationship(surgeryBooking)
+            val patientSurgeryBookingRelationship = this.createPatientSurgeryBookingRelationship(surgeryBooking)
 
             digitalTwinClient.createOrReplaceRelationship(
                 surgeryHealthcareUserRelationship.sourceId,
@@ -86,12 +87,31 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
                 patientHealthcareUserRelationship,
                 BasicRelationship::class.java,
             )
+
+            digitalTwinClient.createOrReplaceRelationship(
+                patientSurgeryBookingRelationship.sourceId,
+                patientSurgeryBookingRelationship.id,
+                patientSurgeryBookingRelationship,
+                BasicRelationship::class.java
+            )
             return true
         } catch (e: ErrorResponseException) {
             println(e)
             return false
         }
     }
+
+    /**
+     * Create a relationship between surgery booking dt and patient dt.
+     * @param surgeryBooking the surgery booking.
+     * @return a [BasicRelationship] between surgery booking and the patient.
+     */
+    private fun createPatientSurgeryBookingRelationship(surgeryBooking: SurgeryBooking) =
+        BasicRelationship(
+            "${surgeryBooking.surgeryID.id}-${surgeryBooking.patientID.id}",
+            surgeryBooking.surgeryID.id, surgeryBooking.patientID.id,
+            "rel_booking_associated_patient"
+        )
 
     /**
      * Create a relationship between surgery booking dt and health professional dt.

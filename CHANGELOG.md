@@ -1,3 +1,38 @@
+## [1.2.0](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/compare/1.1.2...1.2.0) (2023-05-05)
+
+
+### Features
+
+* add surgery booking dt - patient dt relationship ([dfcb0b8](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/dfcb0b8da7d45c1384ce511c52e97730c9924bcc))
+
+
+### Dependency updates
+
+* **deps:** update dependency com.azure:azure-identity to v1.8.3 ([f02a93a](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/f02a93a90ccc4ae8f6397ad2b9e2c1fbe8daee97))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.26 ([1a2b54e](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/1a2b54e0dddab11b3654922649165d2ea36277c1))
+* **deps:** update ktor to v2.3.1-eap-660 ([b147d06](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/b147d06f7660ae6af01f3fe82aad5cd1fb1f6fe7))
+* **deps:** update ktor to v2.3.1-eap-661 ([76040fb](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/76040fb57cb211555c338adf91c4d00686223838))
+* **deps:** update ktor to v2.3.1-eap-663 ([22fd3b6](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/22fd3b650424b68b315bad3da8241f2856653053))
+* **deps:** update ktor to v2.3.1-eap-665 ([8de6e14](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/8de6e14de643886b0a53b2bb02cbd8e2e6cd5a7f))
+* **deps:** update ktor to v2.3.1-eap-666 ([926228c](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/926228c9aa83bec0f5b03aff7bd90d82a6233e79))
+* **deps:** update ktor to v2.3.1-eap-668 ([12b58dd](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/12b58dd104914a634dc1e9f19f8b81fc793c415f))
+* **deps:** update plugin com.gradle.enterprise to v3.13.1 ([31d52a2](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/31d52a2f4303baffa443f1a21454eef66ee8c01c))
+* **deps:** update plugin kotlin-qa to v0.40.0 ([0fbb514](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/0fbb51427b428f9b3d7738945f13af8d11409f86))
+* **deps:** update plugin kotlin-qa to v0.41.0 ([6fb9ba9](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/6fb9ba9b1289aa1ce43ff69afba6c2d6e3d00acf))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v1.1.7 ([ac2bd0a](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/ac2bd0ab133d9b9fa8089852f7588dc4a86e29da))
+
+
+### General maintenance
+
+* change surgeryDatetime from timestamp to instant ([e8f56f0](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/e8f56f0bb546783bb74ba2a42f6360241ce1ba3b))
+* use env variable instead hard coded url ([834f191](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/834f191ca7bb377a3568ac79a803aa7d42ae12be))
+
+
+### Style improvements
+
+* add trailing comma according to the qa ([ab90e7d](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/ab90e7da078985d757ab58ca1f6a8c8a4afc12da))
+* edit code style to pass the qa ([06101c4](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/06101c4737861716af940356425210f70e7a0418))
+
 ## [1.1.2](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/compare/1.1.1...1.1.2) (2023-04-26)
 
 

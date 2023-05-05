@@ -52,7 +52,7 @@ class SurgicalBookingDataReceiver {
             routing {
                 post("/surgeryBooking") {
                     if (SurgeryBookingController(Provider.digitalTwinSurgeryBookingManager)
-                        .createSurgeryBooking(SurgeryBookingJsonDeserializer().deserialize(call.receiveText()))
+                            .createSurgeryBooking(SurgeryBookingJsonDeserializer().deserialize(call.receiveText()))
                     ) {
                         call.respond(HttpStatusCode.OK)
                     } else {

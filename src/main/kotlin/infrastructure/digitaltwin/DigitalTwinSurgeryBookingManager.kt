@@ -44,7 +44,7 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
             digitalTwinClient.createOrReplaceDigitalTwin(
                 surgeryBooking.surgeryID.id,
                 this.createDigitalTwin(surgeryBooking),
-                BasicDigitalTwin::class.java
+                BasicDigitalTwin::class.java,
             )
 
             val surgeryHealthProfessionalRelationShip = this.createSurgeryHealthProfessionalRelationship(surgeryBooking)
@@ -52,7 +52,7 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
                 surgeryHealthProfessionalRelationShip.sourceId,
                 surgeryHealthProfessionalRelationShip.id,
                 surgeryHealthProfessionalRelationShip,
-                BasicRelationship::class.java
+                BasicRelationship::class.java,
             )
 
             if (!checkIfDigitalTwinExists(surgeryBooking.healthcareUserID.id)) {
@@ -61,7 +61,7 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
                     digitalTwinClient.createOrReplaceDigitalTwin(
                         it.taxCode,
                         healthCareUserDT,
-                        BasicDigitalTwin::class.java
+                        BasicDigitalTwin::class.java,
                     )
                 }
             }
@@ -76,14 +76,14 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
                 surgeryHealthcareUserRelationship.sourceId,
                 surgeryHealthcareUserRelationship.id,
                 surgeryHealthcareUserRelationship,
-                BasicRelationship::class.java
+                BasicRelationship::class.java,
             )
 
             digitalTwinClient.createOrReplaceRelationship(
                 patientHealthcareUserRelationship.sourceId,
                 patientHealthcareUserRelationship.id,
                 patientHealthcareUserRelationship,
-                BasicRelationship::class.java
+                BasicRelationship::class.java,
             )
             return true
         } catch (e: ErrorResponseException) {
@@ -100,8 +100,9 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
     private fun createSurgeryHealthProfessionalRelationship(surgeryBooking: SurgeryBooking) =
         BasicRelationship(
             "${surgeryBooking.surgeryID.id}-${surgeryBooking.healthProfessionalID.id}",
-            surgeryBooking.surgeryID.id, surgeryBooking.healthProfessionalID.id,
-            "rel_responsible_health_professional"
+            surgeryBooking.surgeryID.id,
+            surgeryBooking.healthProfessionalID.id,
+            "rel_responsible_health_professional",
         )
 
     /**
@@ -112,8 +113,9 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
     private fun createSurgeryHealthCareUserRelationship(surgeryBooking: SurgeryBooking) =
         BasicRelationship(
             "${surgeryBooking.surgeryID.id}-${surgeryBooking.healthcareUserID.id}",
-            surgeryBooking.surgeryID.id, surgeryBooking.healthcareUserID.id,
-            "rel_healthcare_user"
+            surgeryBooking.surgeryID.id,
+            surgeryBooking.healthcareUserID.id,
+            "rel_healthcare_user",
         )
 
     /**
@@ -124,8 +126,9 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
     private fun createPatientHealthCareUserRelationship(surgeryBooking: SurgeryBooking) =
         BasicRelationship(
             "${surgeryBooking.patientID.id}-${surgeryBooking.healthcareUserID.id}",
-            surgeryBooking.patientID.id, surgeryBooking.healthcareUserID.id,
-            "rel_is_associated"
+            surgeryBooking.patientID.id,
+            surgeryBooking.healthcareUserID.id,
+            "rel_is_associated",
         )
 
     /**
@@ -135,7 +138,8 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
      */
     private fun checkIfDigitalTwinExists(digitalTwinId: String) =
         digitalTwinClient.query(
-            "SELECT * FROM digitaltwins WHERE \$dtId = '$digitalTwinId'", String::class.java
+            "SELECT * FROM digitaltwins WHERE \$dtId = '$digitalTwinId'",
+            String::class.java,
         ).count() > 0
 
     /**
@@ -187,13 +191,15 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
         runBlocking {
             val client = HttpClient(CIO)
             val response: Map<String, Any> = client.get(
-                "https://localhost:8080/api/patients/$healthcareUserTaxCode"
+                "https://localhost:8080/api/patients/$healthcareUserTaxCode",
             ).body()
             val name = response["name"]
             val surname = response["surname"]
             if (name != null && surname != null) {
                 HealthcareUser(healthcareUserTaxCode, name.toString(), surname.toString())
-            } else null
+            } else {
+                null
+            }
         }
 
     companion object {

@@ -32,6 +32,7 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
         checkNotNull(System.getenv(dtTenantVariable)) { "azure tenant id required" }
         checkNotNull(System.getenv(dtAppSecretVariable)) { "azure client secret id required" }
         checkNotNull(System.getenv(dtEndpointVariable)) { "azure dt endpoint required" }
+        checkNotNull(System.getenv(patientManagementMicroserviceUrl)) { "patient management microservice url required" }
     }
 
     private val digitalTwinClient = DigitalTwinsClientBuilder()
@@ -191,7 +192,7 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
         runBlocking {
             val client = HttpClient(CIO)
             val response: Map<String, Any> = client.get(
-                "https://localhost:8080/api/patients/$healthcareUserTaxCode",
+                patientManagementMicroserviceUrl + "patients/$healthcareUserTaxCode"
             ).body()
             val name = response["name"]
             val surname = response["surname"]
@@ -207,5 +208,6 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
         private const val dtTenantVariable = "AZURE_TENANT_ID"
         private const val dtAppSecretVariable = "AZURE_CLIENT_SECRET"
         private const val dtEndpointVariable = "AZURE_DT_ENDPOINT"
+        private const val patientManagementMicroserviceUrl = "PATIENT_MANAGEMENT_INTEGRATION_MICROSERVICE_URL"
     }
 }

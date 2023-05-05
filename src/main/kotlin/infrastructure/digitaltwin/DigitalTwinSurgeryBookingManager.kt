@@ -92,7 +92,7 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
                 patientSurgeryBookingRelationship.sourceId,
                 patientSurgeryBookingRelationship.id,
                 patientSurgeryBookingRelationship,
-                BasicRelationship::class.java
+                BasicRelationship::class.java,
             )
             return true
         } catch (e: ErrorResponseException) {
@@ -109,8 +109,9 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
     private fun createPatientSurgeryBookingRelationship(surgeryBooking: SurgeryBooking) =
         BasicRelationship(
             "${surgeryBooking.surgeryID.id}-${surgeryBooking.patientID.id}",
-            surgeryBooking.surgeryID.id, surgeryBooking.patientID.id,
-            "rel_booking_associated_patient"
+            surgeryBooking.surgeryID.id,
+            surgeryBooking.patientID.id,
+            "rel_booking_associated_patient",
         )
 
     /**
@@ -212,7 +213,7 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
         runBlocking {
             val client = HttpClient(CIO)
             val response: Map<String, Any> = client.get(
-                patientManagementMicroserviceUrl + "patients/$healthcareUserTaxCode"
+                patientManagementMicroserviceUrl + "patients/$healthcareUserTaxCode",
             ).body()
             val name = response["name"]
             val surname = response["surname"]

@@ -15,6 +15,16 @@ $dokka.location:application.presenters.deserializer/SurgeryBookingJsonKeys/PATIE
 $dokka.location:application.presenters.deserializer/SurgeryBookingJsonKeys/SURGERY_DATE_TIME/#/PointingToDeclaration/surgery-booking-integration-microservice/application.presenters.deserializer/-surgery-booking-json-keys/-s-u-r-g-e-r-y_-d-a-t-e_-t-i-m-e.html
 $dokka.location:application.presenters.deserializer/SurgeryBookingJsonKeys/SURGERY_ID/#/PointingToDeclaration/surgery-booking-integration-microservice/application.presenters.deserializer/-surgery-booking-json-keys/-s-u-r-g-e-r-y_-i-d.html
 $dokka.location:application.presenters.deserializer/SurgeryBookingJsonKeys/SURGERY_TYPE/#/PointingToDeclaration/surgery-booking-integration-microservice/application.presenters.deserializer/-surgery-booking-json-keys/-s-u-r-g-e-r-y_-t-y-p-e.html
+$dokka.location:application.presenters.model////PointingToDeclaration/surgery-booking-integration-microservice/application.presenters.model/index.html
+$dokka.location:application.presenters.model/HealthcareUserDto///PointingToDeclaration/surgery-booking-integration-microservice/application.presenters.model/-healthcare-user-dto/index.html
+$dokka.location:application.presenters.model/HealthcareUserDto/HealthcareUserDto/#kotlin.String#kotlin.String#kotlin.String#kotlin.Double#kotlin.Double#kotlin.String#kotlin.String/PointingToDeclaration/surgery-booking-integration-microservice/application.presenters.model/-healthcare-user-dto/-healthcare-user-dto.html
+$dokka.location:application.presenters.model/HealthcareUserDto/birthdate/#/PointingToDeclaration/surgery-booking-integration-microservice/application.presenters.model/-healthcare-user-dto/birthdate.html
+$dokka.location:application.presenters.model/HealthcareUserDto/bloodGroup/#/PointingToDeclaration/surgery-booking-integration-microservice/application.presenters.model/-healthcare-user-dto/blood-group.html
+$dokka.location:application.presenters.model/HealthcareUserDto/height/#/PointingToDeclaration/surgery-booking-integration-microservice/application.presenters.model/-healthcare-user-dto/height.html
+$dokka.location:application.presenters.model/HealthcareUserDto/name/#/PointingToDeclaration/surgery-booking-integration-microservice/application.presenters.model/-healthcare-user-dto/name.html
+$dokka.location:application.presenters.model/HealthcareUserDto/surname/#/PointingToDeclaration/surgery-booking-integration-microservice/application.presenters.model/-healthcare-user-dto/surname.html
+$dokka.location:application.presenters.model/HealthcareUserDto/taxCode/#/PointingToDeclaration/surgery-booking-integration-microservice/application.presenters.model/-healthcare-user-dto/tax-code.html
+$dokka.location:application.presenters.model/HealthcareUserDto/weight/#/PointingToDeclaration/surgery-booking-integration-microservice/application.presenters.model/-healthcare-user-dto/weight.html
 $dokka.location:application////PointingToDeclaration/surgery-booking-integration-microservice/application/index.html
 $dokka.location:application/SurgeryBookingController///PointingToDeclaration/surgery-booking-integration-microservice/application/-surgery-booking-controller/index.html
 $dokka.location:application/SurgeryBookingController/SurgeryBookingController/#application.SurgeryBookingManager/PointingToDeclaration/surgery-booking-integration-microservice/application/-surgery-booking-controller/-surgery-booking-controller.html
@@ -74,6 +84,7 @@ $dokka.location:usecase.repository/SurgeryBookingRepository///PointingToDeclarat
 $dokka.location:usecase.repository/SurgeryBookingRepository/createSurgeryBooking/#entity.SurgeryBooking/PointingToDeclaration/surgery-booking-integration-microservice/usecase.repository/-surgery-booking-repository/create-surgery-booking.html
 application
 application.presenters.deserializer
+application.presenters.model
 entity
 infrastructure
 infrastructure.api

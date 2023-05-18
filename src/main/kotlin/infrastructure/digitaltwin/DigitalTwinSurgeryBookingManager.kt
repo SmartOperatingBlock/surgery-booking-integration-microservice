@@ -9,6 +9,7 @@
 package infrastructure.digitaltwin
 
 import application.SurgeryBookingManager
+import application.presenters.model.HealthcareUserDto
 import com.azure.digitaltwins.core.BasicDigitalTwin
 import com.azure.digitaltwins.core.BasicDigitalTwinMetadata
 import com.azure.digitaltwins.core.BasicRelationship
@@ -22,6 +23,7 @@ import io.ktor.client.call.body
 import io.ktor.client.engine.cio.CIO
 import io.ktor.client.request.get
 import kotlinx.coroutines.runBlocking
+import kotlinx.serialization.json.Json
 
 /**
  * Manager that manage the update of the digital twin on Azure digital twin platform.
@@ -57,7 +59,7 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
             )
 
             if (!checkIfDigitalTwinExists(surgeryBooking.healthcareUserID.id)) {
-                requestHealthCareUserInformation(surgeryBooking.healthProfessionalID.id)?.let {
+                requestHealthCareUserInformation(surgeryBooking.healthcareUserID.id).let {
                     val healthCareUserDT = createDigitalTwin(it)
                     digitalTwinClient.createOrReplaceDigitalTwin(
                         it.taxCode,
@@ -158,11 +160,13 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
      * @param digitalTwinId the id of the digital twin.
      * @return true if the digital twin exists, false otherwise.
      */
-    private fun checkIfDigitalTwinExists(digitalTwinId: String) =
-        digitalTwinClient.query(
+    private fun checkIfDigitalTwinExists(digitalTwinId: String): Boolean {
+        val res = digitalTwinClient.query(
             "SELECT * FROM digitaltwins WHERE \$dtId = '$digitalTwinId'",
             String::class.java,
         ).count() > 0
+        return res
+    }
 
     /**
      * Create a [BasicDigitalTwin] of a surgery booking.
@@ -209,20 +213,17 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
      * @param healthcareUserTaxCode the tax code of the healthcare user.
      * @return an instance of [HealthcareUser] if the request success, null otherwise.
      */
-    private fun requestHealthCareUserInformation(healthcareUserTaxCode: String): HealthcareUser? =
-        runBlocking {
+    private fun requestHealthCareUserInformation(healthcareUserTaxCode: String): HealthcareUser {
+        val toRet = runBlocking {
+            val url = "${System.getenv(patientManagementMicroserviceUrl)}patients/$healthcareUserTaxCode"
             val client = HttpClient(CIO)
-            val response: Map<String, Any> = client.get(
-                patientManagementMicroserviceUrl + "patients/$healthcareUserTaxCode",
-            ).body()
-            val name = response["name"]
-            val surname = response["surname"]
-            if (name != null && surname != null) {
-                HealthcareUser(healthcareUserTaxCode, name.toString(), surname.toString())
-            } else {
-                null
-            }
+            val response = Json.decodeFromString<HealthcareUserDto>(client.get(url).body())
+            val name = response.name
+            val surname = response.surname
+            return@runBlocking HealthcareUser(healthcareUserTaxCode, name, surname)
         }
+        return toRet
+    }
 
     companion object {
         private const val dtAppIdVariable = "AZURE_CLIENT_ID"

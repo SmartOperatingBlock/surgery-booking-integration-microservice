@@ -8,9 +8,8 @@
 
 package infrastructure.api
 
-import application.SurgeryBookingController
 import application.presenters.deserializer.SurgeryBookingJsonDeserializer
-import infrastructure.Provider
+import infrastructure.digitaltwin.DigitalTwinSurgeryBookingManager
 import io.ktor.http.HttpStatusCode
 import io.ktor.server.application.Application
 import io.ktor.server.application.call
@@ -30,7 +29,7 @@ class SurgicalBookingDataReceiver {
      * Starts ktor embedded server.
      */
     fun start() {
-        embeddedServer(Netty, port = 3000, module = this::dispatcher).start(true)
+        embeddedServer(Netty, port = 3002, module = this::dispatcher).start(true)
     }
 
     /**
@@ -51,12 +50,11 @@ class SurgicalBookingDataReceiver {
         with(app) {
             routing {
                 post("/surgeryBooking") {
-                    if (SurgeryBookingController(Provider.digitalTwinSurgeryBookingManager)
-                            .createSurgeryBooking(SurgeryBookingJsonDeserializer().deserialize(call.receiveText()))
-                    ) {
+                    val booking = SurgeryBookingJsonDeserializer().deserialize(call.receiveText())
+                    if (DigitalTwinSurgeryBookingManager().createSurgeryBookingDigitalTwin(booking)) {
                         call.respond(HttpStatusCode.OK)
                     } else {
-                        call.respond(HttpStatusCode.Conflict)
+                        call.respond(HttpStatusCode.BadRequest)
                     }
                 }
             }

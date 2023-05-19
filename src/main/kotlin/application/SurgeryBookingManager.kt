@@ -13,7 +13,7 @@ import entity.SurgeryBooking
 /**
  * Generic manager of a Medical Instrument.
  */
-interface SurgeryBookingManager {
+fun interface SurgeryBookingManager {
 
     /**
      * Manages the surgery booking information.

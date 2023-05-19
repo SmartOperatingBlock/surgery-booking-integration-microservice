@@ -13,7 +13,7 @@ import entity.SurgeryBooking
 /**
  * Interface that models the repository for surgery booking.
  */
-interface SurgeryBookingRepository {
+fun interface SurgeryBookingRepository {
     /**
      * Creates a surgery booking.
      * @param surgeryBooking the surgery booking.

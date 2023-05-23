@@ -8,8 +8,9 @@
 
 package infrastructure.api
 
+import application.SurgeryBookingController
 import application.presenters.deserializer.SurgeryBookingJsonDeserializer
-import infrastructure.digitaltwin.DigitalTwinSurgeryBookingManager
+import infrastructure.Provider
 import io.ktor.http.HttpStatusCode
 import io.ktor.server.application.Application
 import io.ktor.server.application.call
@@ -51,7 +52,9 @@ class SurgicalBookingDataReceiver {
             routing {
                 post("api/v1/surgeryBooking") {
                     val booking = SurgeryBookingJsonDeserializer().deserialize(call.receiveText())
-                    if (DigitalTwinSurgeryBookingManager().createSurgeryBookingDigitalTwin(booking)) {
+                    if (SurgeryBookingController(Provider.digitalTwinSurgeryBookingManager)
+                            .createSurgeryBooking(booking)
+                    ) {
                         call.respond(HttpStatusCode.OK)
                     } else {
                         call.respond(HttpStatusCode.BadRequest)

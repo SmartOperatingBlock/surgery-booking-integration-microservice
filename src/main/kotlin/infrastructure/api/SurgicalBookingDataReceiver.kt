@@ -29,7 +29,7 @@ class SurgicalBookingDataReceiver {
      * Starts ktor embedded server.
      */
     fun start() {
-        embeddedServer(Netty, port = 3002, module = this::dispatcher).start(true)
+        embeddedServer(Netty, port = 3000, module = this::dispatcher).start(true)
     }
 
     /**
@@ -49,7 +49,7 @@ class SurgicalBookingDataReceiver {
     private fun receiveSurgeryBooking(app: Application) {
         with(app) {
             routing {
-                post("/surgeryBooking") {
+                post("api/v1/surgeryBooking") {
                     val booking = SurgeryBookingJsonDeserializer().deserialize(call.receiveText())
                     if (DigitalTwinSurgeryBookingManager().createSurgeryBookingDigitalTwin(booking)) {
                         call.respond(HttpStatusCode.OK)

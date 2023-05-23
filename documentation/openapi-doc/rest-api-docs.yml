@@ -1,4 +1,7 @@
 openapi: 3.0.0
+servers:
+  - description: Surgery Booking Integration microservice
+    url: http://localhost:<port>/api/v1
 info:
   title: Surgery Booking Microservice API
   version: 1.0.0

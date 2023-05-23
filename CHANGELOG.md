@@ -1,3 +1,51 @@
+## [1.3.0](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/compare/1.2.0...1.3.0) (2023-05-23)
+
+
+### Features
+
+* create healthcare user dto ([ab51a5d](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/ab51a5da3c219f00904c70efb5a4d1fe8b110163))
+
+
+### Bug Fixes
+
+* fix bug in healthcare user info request ([61c7dcf](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/61c7dcf02546528824a2fe4a4e77eb3665075a9a))
+
+
+### Build and continuous integration
+
+* **deps:** update codecov/codecov-action action to v3.1.4 ([dc974a3](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/dc974a3dfcad9efa3e52c43403574053957a77a3))
+* **deps:** update smartoperatingblock/documentation-ghp-action action to v1.1.0 ([37da612](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/37da612445e45054b067a8f2b57e5c3feb45d295))
+
+
+### Refactoring
+
+* refactor some code ([4121a95](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/4121a95cf42a2e41eface29c35ffe3a7ccab71ff))
+
+
+### Dependency updates
+
+* **deps:** update alpine docker tag to v3.18 ([e3bc1b5](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/e3bc1b51ba3c3bd684ebdf3da3a1dc4cc67c3c91))
+* **deps:** update dependency com.azure:azure-identity to v1.9.0 ([856fd44](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/856fd44ab5ab9a71e5dbd71d35ae769dce2cace6))
+* **deps:** update kotest to v5.6.2 ([1c1e114](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/1c1e1140e14c31e33d4be7a1bc6a42a2e41a30cd))
+* **deps:** update ktor to v2.3.1-eap-669 ([46851ad](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/46851ad75ac96e616b3172f400b759093245734e))
+* **deps:** update ktor to v2.3.1-eap-670 ([2815281](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/28152813129a92080e0337fe5cea8d16ac4cd5d7))
+* **deps:** update ktor to v2.3.1-eap-671 ([ab28115](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/ab28115f6d0dcfb03875dae528b059a9e8d2d0e4))
+* **deps:** update ktor to v2.3.1-eap-672 ([5b1d428](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/5b1d428cb2ede726153a3fdc56f9439fd2ede32c))
+* **deps:** update ktor to v2.3.1-eap-673 ([3377d2c](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/3377d2c149d8f6d7b125bc5151b72707f9ca165a))
+* **deps:** update ktor to v2.3.1-eap-674 ([5e3f59b](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/5e3f59ba96f52ac1e6cc1b99766e15c8d42a4025))
+* **deps:** update ktor to v2.3.1-eap-675 ([b6e1ad6](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/b6e1ad6354c6faf2a52f73ac7b06399cbb5961b5))
+* **deps:** update ktor to v2.3.1-eap-676 ([bdde526](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/bdde526c7f750f71585bcc2514f6ab9ab7886122))
+* **deps:** update ktor to v2.3.1-eap-677 ([90d92e6](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/90d92e6e71267dfcf0da2a2c1d80d51c4e231c69))
+* **deps:** update plugin com.gradle.enterprise to v3.13.2 ([79d6661](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/79d66619fb7886e0f996ba4a04b78311148ac12a))
+
+
+### General maintenance
+
+* add call to controller to create digital twin ([274d561](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/274d561da22eab339fbc2d502ee141229ddde384))
+* add serialization dependencies ([49dbf53](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/49dbf53c496edc85dd588eaced239a048397ac13))
+* add version of the api ([bc61123](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/bc611237a1f88689b6e2b85292b2abc1b2a75b37))
+* make interface functional ([1b5c2d4](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/1b5c2d4c99e30eca8d20b45aa37e316cd17adf7f))
+
 ## [1.2.0](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/compare/1.1.2...1.2.0) (2023-05-05)
 
 

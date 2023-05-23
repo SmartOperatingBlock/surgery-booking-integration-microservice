@@ -1,0 +1,57 @@
+openapi: 3.0.0
+info:
+  title: Surgery Booking Microservice API
+  version: 1.0.0
+paths:
+  /api/v1/surgeryBooking:
+    post:
+      summary: Create a surgery booking
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SurgeryBookingRequest'
+      responses:
+        '200':
+          description: Success
+
+        '400':
+          description: Bad Request
+          
+        '500':
+          description: Server error occurred
+          
+     
+components:
+  schemas:
+    SurgeryBookingRequest:
+      type: object
+      properties:
+        surgeryId:
+          type: string
+          example: "1234"
+        surgeryType:
+          type: string
+          example: "Breast Surgery"
+        healthcareUserID:
+          type: string
+          example: "1234"
+        healthProfessionalID:
+          type: string
+          example: "1234"
+        surgeryDateTime:
+          type: string
+          example: "2017-07-21T17:32:28Z"
+        patientID:
+          example: "1234"
+          type: string
+
+      required:
+        - surgeryId
+        - surgeryType
+        - healthcareUserID
+        - healthProfessionalID
+        - surgeryDateTime
+        - patientID
+        

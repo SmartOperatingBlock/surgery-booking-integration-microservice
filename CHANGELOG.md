@@ -1,3 +1,22 @@
+## [1.3.1](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/compare/1.3.0...1.3.1) (2023-05-30)
+
+
+### Bug Fixes
+
+* correct url to patient management microservice ([1f9e589](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/1f9e58994c3b5b9ce43f90d70d510ce2953e2e5f))
+
+
+### General maintenance
+
+* update readme ([0487c66](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/0487c66ad479de7e37bb2ef055404944cd47fe9b))
+
+
+### Dependency updates
+
+* **deps:** update dependency com.azure:azure-digitaltwins-core to v1.3.9 ([3b4475f](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/3b4475fd9b5b365ee92035fb851a5da1b02de46e))
+* **deps:** update plugin com.gradle.enterprise to v3.13.3 ([5db6a5f](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/5db6a5f54dcefc3e255adba7491b132fa9893e2b))
+* **deps:** update plugin kotlin-qa to v0.42.0 ([478b75b](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/478b75b46da51f7dbefe9e7cf4ecbf1f98fa494f))
+
 ## [1.3.0](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/compare/1.2.0...1.3.0) (2023-05-23)
 
 

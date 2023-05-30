@@ -215,7 +215,7 @@ class DigitalTwinSurgeryBookingManager : SurgeryBookingManager {
      */
     private fun requestHealthCareUserInformation(healthcareUserTaxCode: String): HealthcareUser {
         val toRet = runBlocking {
-            val url = "${System.getenv(patientManagementMicroserviceUrl)}patients/$healthcareUserTaxCode"
+            val url = "${System.getenv(patientManagementMicroserviceUrl)}/patients/$healthcareUserTaxCode"
             val client = HttpClient(CIO)
             val response = Json.decodeFromString<HealthcareUserDto>(client.get(url).body())
             val name = response.name

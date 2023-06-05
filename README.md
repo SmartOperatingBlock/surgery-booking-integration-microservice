@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![Version](https://img.shields.io/github/v/release/smartoperatingblock/surgery-booking-integration-microservice?style=plastic)
 
-[![codecov](https://codecov.io/gh/SmartOperatingBlock/surgery-booking-integration-microservice/branch/main/graph/badge.svg?token=7GL0gAUkQp)](https://codecov.io/gh/SmartOperatingBlock/surgery-booking-integration-microservice)
+
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=SmartOperatingBlock_surgery-booking-integration-microservice&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=SmartOperatingBlock_surgery-booking-integration-microservice)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=SmartOperatingBlock_surgery-booking-integration-microservice&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=SmartOperatingBlock_surgery-booking-integration-microservice)
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=SmartOperatingBlock_surgery-booking-integration-microservice&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=SmartOperatingBlock_surgery-booking-integration-microservice)

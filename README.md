@@ -29,3 +29,8 @@ If you want to run it via docker container:
     ```
    1. If you want to try the REST-API from the external you need to provide a port mapping to port 3000.
    2. If you want to pass an environment file whose name is different from `.env` use the `--env-file <name>` parameter.
+
+
+## Documentation
+- Direct [link](https://smartoperatingblock.github.io/surgery-booking-integration-microservice/documentation/openapi-doc/) to REST API documentation
+- Direct [link](https://smartoperatingblock.github.io/surgery-booking-integration-microservice/documentation/code-doc/) to Code documentation

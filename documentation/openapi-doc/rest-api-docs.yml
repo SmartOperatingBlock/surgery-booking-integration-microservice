@@ -6,7 +6,7 @@ info:
   title: Surgery Booking Microservice API
   version: 1.0.0
 paths:
-  /api/v1/surgeryBooking:
+  /surgeryBooking:
     post:
       summary: Create a surgery booking
       requestBody:

@@ -1,3 +1,26 @@
+## [1.3.2](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/compare/1.3.1...1.3.2) (2023-06-07)
+
+
+### General maintenance
+
+* add direct links ([c2e359f](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/c2e359fce94846ea0260caf1eba3275167eab114))
+* update readme ([8e9e7c8](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/8e9e7c8083f51bd3683741b817754e89a0c1e870))
+
+
+### Dependency updates
+
+* **deps:** update dependency com.azure:azure-identity to v1.9.1 ([b5af82a](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/b5af82a9fef50819b2c0d923cdb80885900d330b))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.27 ([f3f2ffe](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/f3f2ffe65fe2f93b3f83fd8e6a395e116eb160fb))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.29 ([171027a](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/171027a459eed9efd8f3c1a3ae8976720f1940dd))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.30 ([217c75b](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/217c75b33eaef57a49412cc13519ad7496d092f8))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.32 ([91ad452](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/91ad45216bc762add1e3c4d363d07f14233854a9))
+* **deps:** update plugin kotlin-qa to v0.43.0 ([31dcf2c](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/31dcf2c3328eb966c652604cb826d33cc70726c9))
+
+
+### Documentation
+
+* **deps:** update plugin dokka to v1.8.20 ([fe33d1b](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/fe33d1b574a66a3bc11ba977b3996eef20313eb1))
+
 ## [1.3.1](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/compare/1.3.0...1.3.1) (2023-05-30)
 
 

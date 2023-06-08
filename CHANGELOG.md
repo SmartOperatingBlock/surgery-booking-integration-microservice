@@ -1,3 +1,13 @@
+## [1.3.3](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/compare/1.3.2...1.3.3) (2023-06-08)
+
+
+### Dependency updates
+
+* **core-deps:** update dependency org.jetbrains.kotlin:kotlin-stdlib to v1.8.22 ([609a604](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/609a604905bc3e3f62cb20552b2355f66ce901d6))
+* **deps:** update plugin kotlin-qa to v0.44.0 ([6ae627c](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/6ae627c0d14f5302f23c52115e727cf30859f9b5))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v1.1.8 ([5a5d3d9](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/5a5d3d9e8fbf0d6f2a35482ba6165de10a4a470a))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v1.1.9 ([27f4c6c](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/27f4c6c3e67f42a66da67e45f6f1c392377cc88e))
+
 ## [1.3.2](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/compare/1.3.1...1.3.2) (2023-06-07)
 
 

@@ -1,3 +1,21 @@
+## [1.3.6](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/compare/1.3.5...1.3.6) (2023-09-03)
+
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.47 ([4f480d4](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/4f480d47b9d5cb83d8103930a23ed266a6d96dc0))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.48 ([1be5c7f](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/1be5c7f596d4901e60af2a4897ba427da0fb7e98))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.49 ([4e8eb16](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/4e8eb169bd8f0ab66063a86a7780edba19bc1f3d))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.51 ([2ee03ba](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/2ee03babd99936dfd3d39e0f172481318d127421))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.52 ([f35df4a](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/f35df4a66ec36baade51a161a0fc474724c0123e))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.53 ([fbed838](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/fbed83834eb94c85f7d4e6dc1d81b2e1d7d883f3))
+* **deps:** update kotest to v5.7.0 ([f5b9849](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/f5b9849c6a90f953d665bdba8bba5ff08e410f0a))
+
+
+### Documentation
+
+* **deps:** update plugin dokka to v1.9.0 ([1dac7fa](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/1dac7fa6f1429cdfec471e1da377cce3fd70d7e9))
+
 ## [1.3.5](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/compare/1.3.4...1.3.5) (2023-08-24)
 
 

@@ -1,3 +1,21 @@
+## [1.3.8](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/compare/1.3.7...1.3.8) (2023-10-31)
+
+
+### Dependency updates
+
+* **core-deps:** update dependency org.jetbrains.kotlin:kotlin-stdlib to v1.9.20 ([03f620a](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/03f620a3c4c49cb4cec2346ee93e9c34ae97ff87))
+* **deps:** update dependency com.azure:azure-digitaltwins-core to v1.3.14 ([f1a0004](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/f1a0004879704f4349ce86a1b2b3dcbc1c0e9980))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.69 ([2d2f3e1](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/2d2f3e18d3123fd74049bcd234f1c4ad869228ca))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.70 ([65f5794](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/65f5794ba5fc231f090e6e4dada8fc5c8d467775))
+* **deps:** update node.js to 20.9 ([d93ec74](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/d93ec743c4915d750800745db0655471e835f0c8))
+* **deps:** update node.js to v20 ([c6178cd](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/c6178cd82cf5fd3925ef9e0c8b8ff679148ace23))
+* **deps:** update plugin kotlin-qa to v0.52.0 ([7c4642d](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/7c4642dcd3bc1bc22ff7513364c67a2c6e0273b8))
+
+
+### Build and continuous integration
+
+* **deps:** update actions/setup-node action to v4 ([4b959ce](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/4b959ce3a2355f9f6a1c38ea8383685962619ba1))
+
 ## [1.3.7](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/compare/1.3.6...1.3.7) (2023-10-21)
 
 

@@ -1,3 +1,31 @@
+## [1.3.9](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/compare/1.3.8...1.3.9) (2023-11-24)
+
+
+### Dependency updates
+
+* **core-deps:** update dependency org.jetbrains.kotlin:kotlin-stdlib to v1.9.21 ([3c594f7](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/3c594f77bc5751f977b8835d95b88a20577e70f7))
+* **deps:** update dependency com.azure:azure-digitaltwins-core to v1.3.15 ([d5c4e53](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/d5c4e53efccfcbfb1646e7e54ca088f31e7beaf7))
+* **deps:** update dependency com.azure:azure-identity to v1.11.0 ([afea1eb](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/afea1ebf6af0e3546b95eba1924fe426250bbec2))
+* **deps:** update dependency com.tngtech.archunit:archunit-junit5 to v1.2.0 ([e5a05c2](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/e5a05c2841c3e36d4fe00a8c8a1d438eea0d8478))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.71 ([249fabd](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/249fabd4f1936d64fadbd7ced3f1ba464b9196da))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.72 ([ed376e1](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/ed376e17e9c1596f2729c15f1d0e785e0e92c786))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.73 ([c7a82fb](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/c7a82fbb8817b8baa438eddd1c24806a2a75d215))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.74 ([60b0f00](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/60b0f008108fa427cceed0ebaa32deb5403cdaf1))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.75 ([91a1599](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/91a1599d7ad4b73e095c198a56cf9222a1575916))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.76 ([eb0e605](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/eb0e6055bdf4a606fe4771e8e8086a00443e0479))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.77 ([9751bf2](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/9751bf22600af8362065fc1e8409594fbb0e737a))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.78 ([43204d4](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/43204d41d480e2f264707ec2a17a7ee6b4378365))
+* **deps:** update kotest to v5.8.0 ([bb26829](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/bb2682994ad34822e8eab2e42a5a3e77dba51f36))
+* **deps:** update node.js to 20.10 ([d9ff928](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/d9ff9285641c35a5c119beb6ef34c29f079ce7f0))
+* **deps:** update plugin kotlin-qa to v0.53.0 ([8f43b27](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/8f43b279c677dbfb5b5acaebf71bbcb126799864))
+* **deps:** update plugin kotlin-qa to v0.54.0 ([4775cfa](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/4775cfa6e4636197078a7c8c17947f573b329ec2))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v1.1.14 ([e1cb81d](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/e1cb81d32ec8d5c581638a2c30e42b7b7fe8be28))
+
+
+### Build and continuous integration
+
+* **deps:** update smartoperatingblock/release-and-delivery-action action to v1.0.11 ([f0679f0](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/commit/f0679f0f0f5144cc4ab74148b21e21a57772ceb3))
+
 ## [1.3.8](https://github.com/SmartOperatingBlock/surgery-booking-integration-microservice/compare/1.3.7...1.3.8) (2023-10-31)
 
 
